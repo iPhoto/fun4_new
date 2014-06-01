@@ -13,6 +13,5 @@
 
 @dynamic name;
 @dynamic phoneNumber;
-@dynamic gender;
 
 @end

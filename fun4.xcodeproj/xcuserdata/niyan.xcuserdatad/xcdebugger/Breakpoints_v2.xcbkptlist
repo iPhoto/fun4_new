@@ -642,7 +642,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "fun4/MeViewController.m"
-            timestampString = "423102116.952232"
+            timestampString = "423347059.679941"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "-saveMe:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "fun4/MeViewController.m"
+            timestampString = "423347059.679941"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "84"
@@ -658,11 +674,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "fun4/MeViewController.m"
-            timestampString = "423343989.486473"
+            timestampString = "423347059.679941"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "-saveMe:"
             landmarkType = "5">
          </BreakpointContent>
@@ -674,12 +690,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "fun4/MeViewController.m"
-            timestampString = "423344091.970355"
+            timestampString = "423347117.212528"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "-saveMe:"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

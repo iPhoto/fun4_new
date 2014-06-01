@@ -45,6 +45,11 @@
     
     arrayOfTravelers = [managedContextObject executeFetchRequest:fetchRequest
                                                            error:&error];
+    if ([arrayOfTravelers count] > 0)
+    {
+        _myName.text = [[arrayOfTravelers objectAtIndex:0] name];
+        _myPhone.text = [[arrayOfTravelers objectAtIndex:0] phoneNumber];
+    }
     
     if (error != nil) {
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
@@ -74,7 +79,6 @@
     
     traveler.name = _myName.text;
     traveler.phoneNumber = _myPhone.text;
-    traveler.gender = @"F";
     
     NSError *error = nil;
     NSFetchRequest *fetchRequest;
@@ -87,10 +91,15 @@
     
     _myInfoLabel.text = [[arrayOfTravelers objectAtIndex:0] name];
     
-    if (error != nil) {
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
+    if ([managedContextObject save:&error])
+    {
+        NSLog(@"save successfully");
     }
+    else
+    {
+        NSLog(@"fail to save");
+    }
+   
 
 
     
