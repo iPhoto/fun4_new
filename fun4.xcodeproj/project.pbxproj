@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC47FEF61932BFFE00725384 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC47FEF51932BFFE00725384 /* CoreData.framework */; };
+		BC47FEFA1932C06600725384 /* fun4.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC47FEF81932C06600725384 /* fun4.xcdatamodeld */; };
+		BC47FF031934121A00725384 /* Traveler.m in Sources */ = {isa = PBXBuildFile; fileRef = BC47FF021934121A00725384 /* Traveler.m */; };
+		BC47FF09193416FB00725384 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC47FF08193416FB00725384 /* MeViewController.m */; };
 		BC783A2C18F4D0D200BC26EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC783A2B18F4D0D200BC26EB /* Foundation.framework */; };
 		BC783A2E18F4D0D200BC26EB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC783A2D18F4D0D200BC26EB /* CoreGraphics.framework */; };
 		BC783A3018F4D0D200BC26EB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC783A2F18F4D0D200BC26EB /* UIKit.framework */; };
@@ -21,6 +25,20 @@
 		BC783A4D18F4D0D300BC26EB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC783A2F18F4D0D200BC26EB /* UIKit.framework */; };
 		BC783A5518F4D0D300BC26EB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BC783A5318F4D0D300BC26EB /* InfoPlist.strings */; };
 		BC783A5718F4D0D300BC26EB /* fun4Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC783A5618F4D0D300BC26EB /* fun4Tests.m */; };
+		BC8E8F2818FAE95E008D8C51 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC8E8F2718FAE95E008D8C51 /* CoreLocation.framework */; };
+		BC8E8F2E18FAEC20008D8C51 /* AttractionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8E8F2D18FAEC20008D8C51 /* AttractionsTableViewController.m */; };
+		BC8E8F3A18FB1F42008D8C51 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8E8F3918FB1F42008D8C51 /* SearchViewController.m */; };
+		BC8E8F3C18FB225D008D8C51 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC8E8F3B18FB225D008D8C51 /* MapKit.framework */; };
+		BC8E8F4118FB2413008D8C51 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8E8F3E18FB236D008D8C51 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BC91AAF01909DA1B004B2135 /* AttractionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC91AAEF1909DA1B004B2135 /* AttractionDetailViewController.m */; };
+		BC91AAF51909ECD2004B2135 /* Attraction.m in Sources */ = {isa = PBXBuildFile; fileRef = BC91AAF41909ECD2004B2135 /* Attraction.m */; };
+		BC94924D190F2D4500EC956D /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BC949249190F2D4500EC956D /* AcousticModelEnglish.bundle */; };
+		BC94924E190F2D4500EC956D /* AcousticModelSpanish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BC94924A190F2D4500EC956D /* AcousticModelSpanish.bundle */; };
+		BC94924F190F2D4500EC956D /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC94924B190F2D4500EC956D /* OpenEars.framework */; };
+		BC949250190F2D4500EC956D /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC94924C190F2D4500EC956D /* Slt.framework */; };
+		BC949253190F2DB100EC956D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC949251190F2DB100EC956D /* AudioToolbox.framework */; };
+		BC949254190F2DB100EC956D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC949252190F2DB100EC956D /* AVFoundation.framework */; };
+		BC9492571911CF5800EC956D /* DynamicSpeechRecognition.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9492561911CF5800EC956D /* DynamicSpeechRecognition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +52,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC47FEF51932BFFE00725384 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		BC47FEF91932C06600725384 /* fun4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = fun4.xcdatamodel; sourceTree = "<group>"; };
+		BC47FF011934121A00725384 /* Traveler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Traveler.h; sourceTree = "<group>"; };
+		BC47FF021934121A00725384 /* Traveler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Traveler.m; sourceTree = "<group>"; };
+		BC47FF07193416FB00725384 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
+		BC47FF08193416FB00725384 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
 		BC783A2818F4D0D200BC26EB /* fun4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fun4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC783A2B18F4D0D200BC26EB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BC783A2D18F4D0D200BC26EB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +77,28 @@
 		BC783A5218F4D0D300BC26EB /* fun4Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "fun4Tests-Info.plist"; sourceTree = "<group>"; };
 		BC783A5418F4D0D300BC26EB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BC783A5618F4D0D300BC26EB /* fun4Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = fun4Tests.m; sourceTree = "<group>"; };
+		BC8E8F2618FAE7F6008D8C51 /* searchCriteriaProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = searchCriteriaProtocol.h; sourceTree = "<group>"; };
+		BC8E8F2718FAE95E008D8C51 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		BC8E8F2C18FAEC20008D8C51 /* AttractionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttractionsTableViewController.h; sourceTree = "<group>"; };
+		BC8E8F2D18FAEC20008D8C51 /* AttractionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttractionsTableViewController.m; sourceTree = "<group>"; };
+		BC8E8F3818FB1F42008D8C51 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		BC8E8F3918FB1F42008D8C51 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		BC8E8F3B18FB225D008D8C51 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		BC8E8F3D18FB236D008D8C51 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		BC8E8F3E18FB236D008D8C51 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		BC91AAEE1909DA1B004B2135 /* AttractionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttractionDetailViewController.h; sourceTree = "<group>"; };
+		BC91AAEF1909DA1B004B2135 /* AttractionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttractionDetailViewController.m; sourceTree = "<group>"; };
+		BC91AAF11909EC02004B2135 /* attractionDetailProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = attractionDetailProtocol.h; sourceTree = "<group>"; };
+		BC91AAF31909ECD2004B2135 /* Attraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attraction.h; sourceTree = "<group>"; };
+		BC91AAF41909ECD2004B2135 /* Attraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Attraction.m; sourceTree = "<group>"; };
+		BC949249190F2D4500EC956D /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
+		BC94924A190F2D4500EC956D /* AcousticModelSpanish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelSpanish.bundle; sourceTree = "<group>"; };
+		BC94924B190F2D4500EC956D /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
+		BC94924C190F2D4500EC956D /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
+		BC949251190F2DB100EC956D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		BC949252190F2DB100EC956D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BC9492551911CF5800EC956D /* DynamicSpeechRecognition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicSpeechRecognition.h; sourceTree = "<group>"; };
+		BC9492561911CF5800EC956D /* DynamicSpeechRecognition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicSpeechRecognition.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +106,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC47FEF61932BFFE00725384 /* CoreData.framework in Frameworks */,
+				BC949253190F2DB100EC956D /* AudioToolbox.framework in Frameworks */,
+				BC949254190F2DB100EC956D /* AVFoundation.framework in Frameworks */,
+				BC8E8F3C18FB225D008D8C51 /* MapKit.framework in Frameworks */,
+				BC949250190F2D4500EC956D /* Slt.framework in Frameworks */,
+				BC8E8F2818FAE95E008D8C51 /* CoreLocation.framework in Frameworks */,
 				BC783A2E18F4D0D200BC26EB /* CoreGraphics.framework in Frameworks */,
 				BC783A3018F4D0D200BC26EB /* UIKit.framework in Frameworks */,
 				BC783A2C18F4D0D200BC26EB /* Foundation.framework in Frameworks */,
+				BC94924F190F2D4500EC956D /* OpenEars.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +132,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC47FEF71932C03500725384 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BC47FEF81932C06600725384 /* fun4.xcdatamodeld */,
+				BC47FF011934121A00725384 /* Traveler.h */,
+				BC47FF021934121A00725384 /* Traveler.m */,
+			);
+			name = Data;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		BC783A1F18F4D0D200BC26EB = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +150,7 @@
 				BC783A5018F4D0D300BC26EB /* fun4Tests */,
 				BC783A2A18F4D0D200BC26EB /* Frameworks */,
 				BC783A2918F4D0D200BC26EB /* Products */,
+				BC949248190F2D4500EC956D /* Framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +166,11 @@
 		BC783A2A18F4D0D200BC26EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BC47FEF51932BFFE00725384 /* CoreData.framework */,
+				BC949251190F2DB100EC956D /* AudioToolbox.framework */,
+				BC949252190F2DB100EC956D /* AVFoundation.framework */,
+				BC8E8F3B18FB225D008D8C51 /* MapKit.framework */,
+				BC8E8F2718FAE95E008D8C51 /* CoreLocation.framework */,
 				BC783A2B18F4D0D200BC26EB /* Foundation.framework */,
 				BC783A2D18F4D0D200BC26EB /* CoreGraphics.framework */,
 				BC783A2F18F4D0D200BC26EB /* UIKit.framework */,
@@ -112,12 +182,28 @@
 		BC783A3118F4D0D200BC26EB /* fun4 */ = {
 			isa = PBXGroup;
 			children = (
+				BC47FEF71932C03500725384 /* Data */,
+				BC91AAF21909ECA5004B2135 /* Model */,
+				BC8E8F2518FAE7C0008D8C51 /* protocols */,
+				BC783A6018F4D0E000BC26EB /* iPad */,
+				BC8E8F3D18FB236D008D8C51 /* JSONKit.h */,
+				BC8E8F3E18FB236D008D8C51 /* JSONKit.m */,
 				BC783A3A18F4D0D200BC26EB /* AppDelegate.h */,
 				BC783A3B18F4D0D200BC26EB /* AppDelegate.m */,
 				BC783A3D18F4D0D200BC26EB /* Main.storyboard */,
 				BC783A4018F4D0D200BC26EB /* ViewController.h */,
 				BC783A4118F4D0D200BC26EB /* ViewController.m */,
 				BC783A4318F4D0D200BC26EB /* Images.xcassets */,
+				BC8E8F2C18FAEC20008D8C51 /* AttractionsTableViewController.h */,
+				BC8E8F2D18FAEC20008D8C51 /* AttractionsTableViewController.m */,
+				BC8E8F3818FB1F42008D8C51 /* SearchViewController.h */,
+				BC8E8F3918FB1F42008D8C51 /* SearchViewController.m */,
+				BC91AAEE1909DA1B004B2135 /* AttractionDetailViewController.h */,
+				BC91AAEF1909DA1B004B2135 /* AttractionDetailViewController.m */,
+				BC47FF07193416FB00725384 /* MeViewController.h */,
+				BC47FF08193416FB00725384 /* MeViewController.m */,
+				BC9492551911CF5800EC956D /* DynamicSpeechRecognition.h */,
+				BC9492561911CF5800EC956D /* DynamicSpeechRecognition.m */,
 				BC783A3218F4D0D200BC26EB /* Supporting Files */,
 			);
 			path = fun4;
@@ -150,6 +236,43 @@
 				BC783A5318F4D0D300BC26EB /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BC783A6018F4D0E000BC26EB /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
+		BC8E8F2518FAE7C0008D8C51 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BC8E8F2618FAE7F6008D8C51 /* searchCriteriaProtocol.h */,
+				BC91AAF11909EC02004B2135 /* attractionDetailProtocol.h */,
+			);
+			name = protocols;
+			sourceTree = "<group>";
+		};
+		BC91AAF21909ECA5004B2135 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BC91AAF31909ECD2004B2135 /* Attraction.h */,
+				BC91AAF41909ECD2004B2135 /* Attraction.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		BC949248190F2D4500EC956D /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				BC949249190F2D4500EC956D /* AcousticModelEnglish.bundle */,
+				BC94924A190F2D4500EC956D /* AcousticModelSpanish.bundle */,
+				BC94924B190F2D4500EC956D /* OpenEars.framework */,
+				BC94924C190F2D4500EC956D /* Slt.framework */,
+			);
+			name = Framework;
+			path = ../OpenEarsDistribution/Framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +352,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC783A4418F4D0D200BC26EB /* Images.xcassets in Resources */,
+				BC94924E190F2D4500EC956D /* AcousticModelSpanish.bundle in Resources */,
+				BC94924D190F2D4500EC956D /* AcousticModelEnglish.bundle in Resources */,
 				BC783A3618F4D0D200BC26EB /* InfoPlist.strings in Resources */,
 				BC783A3F18F4D0D200BC26EB /* Main.storyboard in Resources */,
 			);
@@ -249,8 +374,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC9492571911CF5800EC956D /* DynamicSpeechRecognition.m in Sources */,
+				BC91AAF51909ECD2004B2135 /* Attraction.m in Sources */,
+				BC47FEFA1932C06600725384 /* fun4.xcdatamodeld in Sources */,
+				BC8E8F4118FB2413008D8C51 /* JSONKit.m in Sources */,
 				BC783A4218F4D0D200BC26EB /* ViewController.m in Sources */,
+				BC8E8F2E18FAEC20008D8C51 /* AttractionsTableViewController.m in Sources */,
+				BC47FF09193416FB00725384 /* MeViewController.m in Sources */,
+				BC91AAF01909DA1B004B2135 /* AttractionDetailViewController.m in Sources */,
+				BC8E8F3A18FB1F42008D8C51 /* SearchViewController.m in Sources */,
 				BC783A3C18F4D0D200BC26EB /* AppDelegate.m in Sources */,
+				BC47FF031934121A00725384 /* Traveler.m in Sources */,
 				BC783A3818F4D0D200BC26EB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,10 +510,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/P/OpenEarsDistribution/Framework,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "fun4/fun4-Prefix.pch";
 				INFOPLIST_FILE = "fun4/fun4-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -389,10 +529,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/P/OpenEarsDistribution/Framework,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "fun4/fun4-Prefix.pch";
 				INFOPLIST_FILE = "fun4/fun4-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -456,6 +602,7 @@
 				BC783A5C18F4D0D300BC26EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BC783A5D18F4D0D300BC26EB /* Build configuration list for PBXNativeTarget "fun4Tests" */ = {
 			isa = XCConfigurationList;
@@ -464,8 +611,22 @@
 				BC783A5F18F4D0D300BC26EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BC47FEF81932C06600725384 /* fun4.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BC47FEF91932C06600725384 /* fun4.xcdatamodel */,
+			);
+			currentVersion = BC47FEF91932C06600725384 /* fun4.xcdatamodel */;
+			path = fun4.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BC783A2018F4D0D200BC26EB /* Project object */;
 }
