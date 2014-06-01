@@ -74,6 +74,7 @@
     
     traveler.name = _myName.text;
     traveler.phoneNumber = _myPhone.text;
+    traveler.gender = @"F";
     
     NSError *error = nil;
     NSFetchRequest *fetchRequest;
