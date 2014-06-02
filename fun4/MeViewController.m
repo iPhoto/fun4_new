@@ -75,13 +75,32 @@
 */
 
 - (IBAction)saveMe:(id)sender {
-    Traveler *traveler = [NSEntityDescription insertNewObjectForEntityForName:@"Traveler" inManagedObjectContext:managedContextObject];
     
-    traveler.name = _myName.text;
-    traveler.phoneNumber = _myPhone.text;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Traveler" inManagedObjectContext:managedContextObject];
+    
+    [fetchRequest setEntity:entity];
     
     NSError *error = nil;
-    NSFetchRequest *fetchRequest;
+    NSArray *existingMe = [managedContextObject executeFetchRequest:fetchRequest error:nil];
+    
+
+    if ([existingMe count] > 0)
+    {
+        [existingMe setValue:@"New Name" forKey:@"name"];
+        [existingMe setValue:@"New Phone" forKey:@"phoneNumber"];
+ 
+    }
+    else
+    {
+        //insert
+        Traveler *newMe = [NSEntityDescription insertNewObjectForEntityForName:@"Traveler" inManagedObjectContext:managedContextObject];
+    
+        newMe.name = _myName.text;
+        newMe.phoneNumber = _myPhone.text;
+    }
+    
+
     NSArray * arrayOfTravelers;
     
     fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Traveler"];
@@ -103,5 +122,22 @@
 
 
     
+}
+
+- (IBAction)deleteCoreData:(id)sender {
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Traveler" inManagedObjectContext:managedContextObject];
+    
+    // Optionally add an NSPredicate if you only want to delete some of the objects.
+    
+    [fetchRequest setEntity:entity];
+    
+    NSArray *myObjectsToDelete = [managedContextObject executeFetchRequest:fetchRequest error:nil];
+    
+    for (Traveler *objectToDelete in myObjectsToDelete) {
+        [managedContextObject deleteObject:objectToDelete];
+    }
+    
+
 }
 @end
