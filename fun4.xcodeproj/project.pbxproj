@@ -39,6 +39,14 @@
 		BC949253190F2DB100EC956D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC949251190F2DB100EC956D /* AudioToolbox.framework */; };
 		BC949254190F2DB100EC956D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC949252190F2DB100EC956D /* AVFoundation.framework */; };
 		BC9492571911CF5800EC956D /* DynamicSpeechRecognition.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9492561911CF5800EC956D /* DynamicSpeechRecognition.m */; };
+		BCF256B9193E9DF3007DADC5 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF256B8193E9DF3007DADC5 /* Parse.framework */; };
+		BCF256BB193E9ECE007DADC5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF256BA193E9ECE007DADC5 /* CFNetwork.framework */; };
+		BCF256BD193E9EEF007DADC5 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF256BC193E9EEF007DADC5 /* libz.dylib */; };
+		BCF256BF193E9F02007DADC5 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF256BE193E9F02007DADC5 /* MobileCoreServices.framework */; };
+		BCF256C1193E9F11007DADC5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF256C0193E9F11007DADC5 /* QuartzCore.framework */; };
+		BCF256C3193E9F20007DADC5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF256C2193E9F20007DADC5 /* Security.framework */; };
+		BCF256C6193E9F2E007DADC5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF256C4193E9F2E007DADC5 /* StoreKit.framework */; };
+		BCF256C7193E9F2E007DADC5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF256C5193E9F2E007DADC5 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +107,14 @@
 		BC949252190F2DB100EC956D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		BC9492551911CF5800EC956D /* DynamicSpeechRecognition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicSpeechRecognition.h; sourceTree = "<group>"; };
 		BC9492561911CF5800EC956D /* DynamicSpeechRecognition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicSpeechRecognition.m; sourceTree = "<group>"; };
+		BCF256B8193E9DF3007DADC5 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		BCF256BA193E9ECE007DADC5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		BCF256BC193E9EEF007DADC5 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		BCF256BE193E9F02007DADC5 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		BCF256C0193E9F11007DADC5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BCF256C2193E9F20007DADC5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		BCF256C4193E9F2E007DADC5 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		BCF256C5193E9F2E007DADC5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,12 +122,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCF256C6193E9F2E007DADC5 /* StoreKit.framework in Frameworks */,
+				BCF256C7193E9F2E007DADC5 /* SystemConfiguration.framework in Frameworks */,
+				BCF256C3193E9F20007DADC5 /* Security.framework in Frameworks */,
+				BCF256C1193E9F11007DADC5 /* QuartzCore.framework in Frameworks */,
+				BCF256BF193E9F02007DADC5 /* MobileCoreServices.framework in Frameworks */,
+				BCF256BD193E9EEF007DADC5 /* libz.dylib in Frameworks */,
+				BCF256BB193E9ECE007DADC5 /* CFNetwork.framework in Frameworks */,
 				BC47FEF61932BFFE00725384 /* CoreData.framework in Frameworks */,
 				BC949253190F2DB100EC956D /* AudioToolbox.framework in Frameworks */,
 				BC949254190F2DB100EC956D /* AVFoundation.framework in Frameworks */,
 				BC8E8F3C18FB225D008D8C51 /* MapKit.framework in Frameworks */,
 				BC949250190F2D4500EC956D /* Slt.framework in Frameworks */,
 				BC8E8F2818FAE95E008D8C51 /* CoreLocation.framework in Frameworks */,
+				BCF256B9193E9DF3007DADC5 /* Parse.framework in Frameworks */,
 				BC783A2E18F4D0D200BC26EB /* CoreGraphics.framework in Frameworks */,
 				BC783A3018F4D0D200BC26EB /* UIKit.framework in Frameworks */,
 				BC783A2C18F4D0D200BC26EB /* Foundation.framework in Frameworks */,
@@ -166,6 +190,14 @@
 		BC783A2A18F4D0D200BC26EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BCF256C4193E9F2E007DADC5 /* StoreKit.framework */,
+				BCF256C5193E9F2E007DADC5 /* SystemConfiguration.framework */,
+				BCF256C2193E9F20007DADC5 /* Security.framework */,
+				BCF256C0193E9F11007DADC5 /* QuartzCore.framework */,
+				BCF256BE193E9F02007DADC5 /* MobileCoreServices.framework */,
+				BCF256BC193E9EEF007DADC5 /* libz.dylib */,
+				BCF256BA193E9ECE007DADC5 /* CFNetwork.framework */,
+				BCF256B8193E9DF3007DADC5 /* Parse.framework */,
 				BC47FEF51932BFFE00725384 /* CoreData.framework */,
 				BC949251190F2DB100EC956D /* AudioToolbox.framework */,
 				BC949252190F2DB100EC956D /* AVFoundation.framework */,
@@ -513,6 +545,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/P/OpenEarsDistribution/Framework,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "fun4/fun4-Prefix.pch";
@@ -532,6 +565,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/P/OpenEarsDistribution/Framework,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "fun4/fun4-Prefix.pch";

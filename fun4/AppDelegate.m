@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <Parse/Parse.h>
 
 @implementation AppDelegate
 @synthesize managedObjectContext = _managedObjectContext;
@@ -15,7 +16,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [Parse setApplicationId:@"v6k4ZWOS942qF2GCBLnOscf1acgEGIkLSaIKJqDT"
+                  clientKey:@"qkvzE8PtxXDrWinaouZo7Twf4N3RkFhXFdCKCcLC"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     return YES;
 }
 							

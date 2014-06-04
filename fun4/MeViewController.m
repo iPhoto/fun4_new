@@ -87,8 +87,8 @@
 
     if ([existingMe count] > 0)
     {
-        [existingMe setValue:@"New Name" forKey:@"name"];
-        [existingMe setValue:@"New Phone" forKey:@"phoneNumber"];
+        [existingMe setValue:_myName.text forKey:@"name"];
+        [existingMe setValue:_myPhone.text forKey:@"phoneNumber"];
  
     }
     else
@@ -98,8 +98,15 @@
     
         newMe.name = _myName.text;
         newMe.phoneNumber = _myPhone.text;
-    }
+ 
     
+        //save to parse
+        PFObject *me = [PFObject objectWithClassName:@"Travelor"];
+        me[@"name"] = newMe.name;
+        me[@"phoneNumber"] = newMe.phoneNumber;
+
+        [me saveInBackground];
+    }
 
     NSArray * arrayOfTravelers;
     
