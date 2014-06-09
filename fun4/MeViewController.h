@@ -12,6 +12,9 @@
 @interface MeViewController : UIViewController
 - (IBAction)saveMe:(id)sender;
 - (IBAction)deleteCoreData:(id)sender;
+- (IBAction)search:(id)sender;
+
+
 @property (strong, nonatomic) IBOutlet UITextField *myName;
 @property (strong, nonatomic) IBOutlet UITextField *myPhone;
 @property (strong, nonatomic) IBOutlet UILabel *myInfoLabel;

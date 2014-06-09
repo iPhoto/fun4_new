@@ -101,11 +101,11 @@
  
     
         //save to parse
-        PFObject *me = [PFObject objectWithClassName:@"Travelor"];
+        PFObject *me = [PFObject objectWithClassName:@"Traveler"];
         me[@"name"] = newMe.name;
         me[@"phoneNumber"] = newMe.phoneNumber;
 
-        [me saveInBackground];
+        [me saveEventually];
     }
 
     NSArray * arrayOfTravelers;
@@ -145,6 +145,15 @@
         [managedContextObject deleteObject:objectToDelete];
     }
     
+
+}
+
+- (IBAction)search:(id)sender {
+
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:
+                              @"phoneNumber = '617 645 4603'"];
+    PFQuery *query = [PFQuery queryWithClassName:@"Traveler" predicate:predicate];
+    NSArray* travelerArray = [query findObjects];
 
 }
 @end
