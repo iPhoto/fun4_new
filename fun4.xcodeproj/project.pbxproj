@@ -47,6 +47,7 @@
 		BCF256C3193E9F20007DADC5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF256C2193E9F20007DADC5 /* Security.framework */; };
 		BCF256C6193E9F2E007DADC5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF256C4193E9F2E007DADC5 /* StoreKit.framework */; };
 		BCF256C7193E9F2E007DADC5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF256C5193E9F2E007DADC5 /* SystemConfiguration.framework */; };
+		BCF256CA19468C38007DADC5 /* PreferenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF256C919468C38007DADC5 /* PreferenceViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,8 @@
 		BCF256C2193E9F20007DADC5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BCF256C4193E9F2E007DADC5 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		BCF256C5193E9F2E007DADC5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		BCF256C819468C38007DADC5 /* PreferenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferenceViewController.h; sourceTree = "<group>"; };
+		BCF256C919468C38007DADC5 /* PreferenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferenceViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +237,8 @@
 				BC91AAEF1909DA1B004B2135 /* AttractionDetailViewController.m */,
 				BC47FF07193416FB00725384 /* MeViewController.h */,
 				BC47FF08193416FB00725384 /* MeViewController.m */,
+				BCF256C819468C38007DADC5 /* PreferenceViewController.h */,
+				BCF256C919468C38007DADC5 /* PreferenceViewController.m */,
 				BC9492551911CF5800EC956D /* DynamicSpeechRecognition.h */,
 				BC9492561911CF5800EC956D /* DynamicSpeechRecognition.m */,
 				BC783A3218F4D0D200BC26EB /* Supporting Files */,
@@ -410,6 +415,7 @@
 				BC91AAF51909ECD2004B2135 /* Attraction.m in Sources */,
 				BC47FEFA1932C06600725384 /* fun4.xcdatamodeld in Sources */,
 				BC8E8F4118FB2413008D8C51 /* JSONKit.m in Sources */,
+				BCF256CA19468C38007DADC5 /* PreferenceViewController.m in Sources */,
 				BC783A4218F4D0D200BC26EB /* ViewController.m in Sources */,
 				BC8E8F2E18FAEC20008D8C51 /* AttractionsTableViewController.m in Sources */,
 				BC47FF09193416FB00725384 /* MeViewController.m in Sources */,

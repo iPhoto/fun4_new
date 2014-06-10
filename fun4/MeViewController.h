@@ -12,7 +12,6 @@
 @interface MeViewController : UIViewController
 - (IBAction)saveMe:(id)sender;
 - (IBAction)deleteCoreData:(id)sender;
-- (IBAction)search:(id)sender;
 
 
 @property (strong, nonatomic) IBOutlet UITextField *myName;

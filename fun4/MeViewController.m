@@ -148,12 +148,5 @@
 
 }
 
-- (IBAction)search:(id)sender {
 
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:
-                              @"phoneNumber = '617 645 4603'"];
-    PFQuery *query = [PFQuery queryWithClassName:@"Traveler" predicate:predicate];
-    NSArray* travelerArray = [query findObjects];
-
-}
 @end
