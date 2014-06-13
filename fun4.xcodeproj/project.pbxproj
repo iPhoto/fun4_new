@@ -48,6 +48,8 @@
 		BCF256C6193E9F2E007DADC5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF256C4193E9F2E007DADC5 /* StoreKit.framework */; };
 		BCF256C7193E9F2E007DADC5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF256C5193E9F2E007DADC5 /* SystemConfiguration.framework */; };
 		BCF256CA19468C38007DADC5 /* PreferenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF256C919468C38007DADC5 /* PreferenceViewController.m */; };
+		BCF256CD194A7636007DADC5 /* MeTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF256CC194A7635007DADC5 /* MeTableTableViewController.m */; };
+		BCF256D6194A838E007DADC5 /* PhotoPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF256D5194A838E007DADC5 /* PhotoPickerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +120,10 @@
 		BCF256C5193E9F2E007DADC5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		BCF256C819468C38007DADC5 /* PreferenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferenceViewController.h; sourceTree = "<group>"; };
 		BCF256C919468C38007DADC5 /* PreferenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferenceViewController.m; sourceTree = "<group>"; };
+		BCF256CB194A7635007DADC5 /* MeTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MeTableTableViewController.h; path = ../MeTableTableViewController.h; sourceTree = "<group>"; };
+		BCF256CC194A7635007DADC5 /* MeTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MeTableTableViewController.m; path = ../MeTableTableViewController.m; sourceTree = "<group>"; };
+		BCF256D4194A838E007DADC5 /* PhotoPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoPickerViewController.h; sourceTree = "<group>"; };
+		BCF256D5194A838E007DADC5 /* PhotoPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoPickerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,11 +131,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCF256BF193E9F02007DADC5 /* MobileCoreServices.framework in Frameworks */,
 				BCF256C6193E9F2E007DADC5 /* StoreKit.framework in Frameworks */,
 				BCF256C7193E9F2E007DADC5 /* SystemConfiguration.framework in Frameworks */,
 				BCF256C3193E9F20007DADC5 /* Security.framework in Frameworks */,
 				BCF256C1193E9F11007DADC5 /* QuartzCore.framework in Frameworks */,
-				BCF256BF193E9F02007DADC5 /* MobileCoreServices.framework in Frameworks */,
 				BCF256BD193E9EEF007DADC5 /* libz.dylib in Frameworks */,
 				BCF256BB193E9ECE007DADC5 /* CFNetwork.framework in Frameworks */,
 				BC47FEF61932BFFE00725384 /* CoreData.framework in Frameworks */,
@@ -237,6 +243,10 @@
 				BC91AAEF1909DA1B004B2135 /* AttractionDetailViewController.m */,
 				BC47FF07193416FB00725384 /* MeViewController.h */,
 				BC47FF08193416FB00725384 /* MeViewController.m */,
+				BCF256CB194A7635007DADC5 /* MeTableTableViewController.h */,
+				BCF256CC194A7635007DADC5 /* MeTableTableViewController.m */,
+				BCF256D4194A838E007DADC5 /* PhotoPickerViewController.h */,
+				BCF256D5194A838E007DADC5 /* PhotoPickerViewController.m */,
 				BCF256C819468C38007DADC5 /* PreferenceViewController.h */,
 				BCF256C919468C38007DADC5 /* PreferenceViewController.m */,
 				BC9492551911CF5800EC956D /* DynamicSpeechRecognition.h */,
@@ -412,9 +422,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC9492571911CF5800EC956D /* DynamicSpeechRecognition.m in Sources */,
+				BCF256D6194A838E007DADC5 /* PhotoPickerViewController.m in Sources */,
 				BC91AAF51909ECD2004B2135 /* Attraction.m in Sources */,
 				BC47FEFA1932C06600725384 /* fun4.xcdatamodeld in Sources */,
 				BC8E8F4118FB2413008D8C51 /* JSONKit.m in Sources */,
+				BCF256CD194A7636007DADC5 /* MeTableTableViewController.m in Sources */,
 				BCF256CA19468C38007DADC5 /* PreferenceViewController.m in Sources */,
 				BC783A4218F4D0D200BC26EB /* ViewController.m in Sources */,
 				BC8E8F2E18FAEC20008D8C51 /* AttractionsTableViewController.m in Sources */,
