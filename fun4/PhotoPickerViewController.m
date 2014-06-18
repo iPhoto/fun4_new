@@ -25,8 +25,23 @@
 
 - (void)viewDidLoad
 {
+    UIBarButtonItem *cameraButton = [[UIBarButtonItem alloc]
+                                     initWithTitle:@"Camera"
+                                     style:UIBarButtonItemStyleBordered
+                                     target:self
+                                     action:@selector(useCamera:)];
+    UIBarButtonItem *cameraRollButton = [[UIBarButtonItem alloc]
+                                         initWithTitle:@"Camera Roll"
+                                         style:UIBarButtonItemStyleBordered
+                                         target:self
+                                         action:@selector(useCameraRoll:)];
+    NSArray *items = [NSArray arrayWithObjects: cameraButton,
+                      cameraRollButton, nil];
+    [toolbar setItems:items animated:NO];
+//    [cameraButton release];
+//    [cameraRollButton release];
+    
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning

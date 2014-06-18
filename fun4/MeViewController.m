@@ -125,10 +125,7 @@
     {
         NSLog(@"fail to save");
     }
-   
 
-
-    
 }
 
 - (IBAction)deleteCoreData:(id)sender {

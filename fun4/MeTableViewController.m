@@ -1,18 +1,19 @@
 //
-//  MeTableTableViewController.m
+//  MeTableViewController.m
 //  fun4
 //
-//  Created by Ni Yan on 6/12/14.
+//  Created by Ni Yan on 6/15/14.
 //  Copyright (c) 2014 Ni Yan. All rights reserved.
 //
 
-#import "MeTableTableViewController.h"
+#import "MeTableViewController.h"
+#import "PhotoPickerViewController.h"
 
-@interface MeTableTableViewController ()
+@interface MeTableViewController ()
 
 @end
 
-@implementation MeTableTableViewController
+@implementation MeTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -41,19 +42,33 @@
 }
 
 #pragma mark - Table view data source
-//
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+
+    return 1;
+}
+
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 //{
-//    // Return the number of sections.
-//    return 1;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-//{
-//    // Return the number of rows in the section.
-//    return 1;
+//    [self performSegueWithIdentifier:@"photoPicker" sender:self];
 //}
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    if ([segue.identifier isEqualToString:@"photoPicker"])
+    {
+        PhotoPickerViewController *nextController;
+        nextController = segue.destinationViewController;
+    }
+    
+}
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -103,15 +118,7 @@
 }
 */
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
 
 @end

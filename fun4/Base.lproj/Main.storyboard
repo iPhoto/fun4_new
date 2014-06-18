@@ -171,7 +171,7 @@
             </objects>
             <point key="canvasLocation" x="789" y="-569"/>
         </scene>
-        <!--Photo Picker View Controller-->
+        <!--Photo Picker View Controller - My Profile Photo-->
         <scene sceneID="fmX-s0-98s">
             <objects>
                 <viewController id="6V8-OJ-IiW" customClass="PhotoPickerViewController" sceneMemberID="viewController">
@@ -184,7 +184,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zmS-M7-Svr">
-                                <rect key="frame" x="11" y="20" width="277" height="192"/>
+                                <rect key="frame" x="11" y="70" width="277" height="192"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="89N-Qe-nyd">
@@ -206,9 +206,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="My Profile Photo" id="wT2-Hd-Q2D"/>
                     <connections>
                         <outlet property="imageView" destination="zmS-M7-Svr" id="tZy-GQ-cas"/>
-                        <outlet property="toolBar" destination="89N-Qe-nyd" id="K7k-e8-kjo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zZA-Jm-PhR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -327,7 +327,7 @@
                         <sections>
                             <tableViewSection headerTitle="Profile" id="drp-Pc-zUI">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="110" id="OWb-cn-UJy">
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="photoCell" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="110" id="OWb-cn-UJy">
                                         <rect key="frame" x="0.0" y="86" width="320" height="110"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OWb-cn-UJy" id="16d-mu-BkA">
@@ -340,6 +340,9 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="6V8-OJ-IiW" kind="push" identifier="photoPicker" id="nUY-OI-2fv"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
