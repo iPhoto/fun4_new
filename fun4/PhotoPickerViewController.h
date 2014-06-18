@@ -12,13 +12,11 @@
 <UIImagePickerControllerDelegate,
 UINavigationControllerDelegate, UIPopoverControllerDelegate>
 {
-    UIToolbar *toolbar;
-    UIPopoverController *popoverController;
-    UIImageView *imageView;
-    BOOL newMedia;
+    UIImagePickerController *picker;
+    IBOutlet UIImageView * selectedImage;
 }
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
-@property (strong, nonatomic) IBOutlet UIToolbar *toolbar;
+
 - (IBAction)useCamera:(id)sender;
 - (IBAction)useCameraRoll:(id)sender;
 

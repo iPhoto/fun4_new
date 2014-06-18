@@ -25,21 +25,7 @@
 
 - (void)viewDidLoad
 {
-    UIBarButtonItem *cameraButton = [[UIBarButtonItem alloc]
-                                     initWithTitle:@"Camera"
-                                     style:UIBarButtonItemStyleBordered
-                                     target:self
-                                     action:@selector(useCamera:)];
-    UIBarButtonItem *cameraRollButton = [[UIBarButtonItem alloc]
-                                         initWithTitle:@"Camera Roll"
-                                         style:UIBarButtonItemStyleBordered
-                                         target:self
-                                         action:@selector(useCameraRoll:)];
-    NSArray *items = [NSArray arrayWithObjects: cameraButton,
-                      cameraRollButton, nil];
-    [toolbar setItems:items animated:NO];
-//    [cameraButton release];
-//    [cameraRollButton release];
+
     
     [super viewDidLoad];
 }
@@ -62,8 +48,42 @@
 */
 
 - (IBAction)useCamera:(id)sender {
+    picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+        
+    {
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        
+    }
+    else
+    {
+        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+    
+    [self presentViewController:picker animated:YES completion:nil];
 }
 
+
+
 - (IBAction)useCameraRoll:(id)sender {
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *) Picker {
+    
+    [[Picker presentingViewController] dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *) Picker
+
+didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+    selectedImage.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    [[Picker presentingViewController] dismissViewControllerAnimated:YES completion:nil];
+    
+
+    
 }
 @end
