@@ -13,7 +13,7 @@
 UINavigationControllerDelegate, UIPopoverControllerDelegate>
 {
     UIImagePickerController *picker;
-    IBOutlet UIImageView * selectedImage;
+    IBOutlet UIImageView *pickedImage;
 }
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 

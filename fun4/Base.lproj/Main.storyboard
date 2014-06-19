@@ -209,6 +209,7 @@
                     <navigationItem key="navigationItem" title="My Profile Photo" id="wT2-Hd-Q2D"/>
                     <connections>
                         <outlet property="imageView" destination="zmS-M7-Svr" id="tZy-GQ-cas"/>
+                        <outlet property="pickedImage" destination="zmS-M7-Svr" id="Ezz-jP-aug"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zZA-Jm-PhR" userLabel="First Responder" sceneMemberID="firstResponder"/>
