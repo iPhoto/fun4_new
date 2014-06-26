@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MeTableViewController : UITableViewController
+@property (strong, nonatomic) IBOutlet UIImageView *profilePhoto;
+
 
 @end

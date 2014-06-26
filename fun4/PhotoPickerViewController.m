@@ -74,7 +74,7 @@
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     
     [self presentViewController:picker animated:YES completion:nil];
-
+    
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *) Picker {
@@ -86,6 +86,7 @@
 
 didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
+    selectedImage.image = [info objectForKey:UIImagePickerControllerOriginalImage];
     pickedImage.image = [info objectForKey:UIImagePickerControllerOriginalImage];
     
     [[Picker presentingViewController] dismissViewControllerAnimated:YES completion:nil];

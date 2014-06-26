@@ -1,19 +1,18 @@
 //
-//  MeTableViewController.m
+//  MeTableTableViewController.m
 //  fun4
 //
-//  Created by Ni Yan on 6/15/14.
+//  Created by Ni Yan on 6/12/14.
 //  Copyright (c) 2014 Ni Yan. All rights reserved.
 //
 
-#import "MeTableViewController.h"
-#import "PhotoPickerViewController.h"
+#import "MeTableTableViewController.h"
 
-@interface MeTableViewController ()
+@interface MeTableTableViewController ()
 
 @end
 
-@implementation MeTableViewController
+@implementation MeTableTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -42,65 +41,19 @@
 }
 
 #pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-
-    return 1;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UIActionSheet *actionSheet = [[UIActionSheet alloc]
-                                  initWithTitle:@"Pick a profile photo"
-                                  delegate:self
-                                  cancelButtonTitle:@"Cancel"
-                                  destructiveButtonTitle:nil
-                                  otherButtonTitles:@"Take Picture", @"Choose Existing", nil];
-    [actionSheet showInView:self.view];
-
-}
-
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
-    
-    if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Take Picture"]) {
-        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    }
-    else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Choose Existing"]) {
-        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    }
-    [self presentModalViewController:picker animated:YES];
-
-}
-
-- (void)imagePickerController:(UIImagePickerController *) Picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    
-    _profilePhoto.image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    
-    [[Picker presentingViewController] dismissViewControllerAnimated:YES completion:nil];
-    
-    
-    
-}
-
-
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 //{
-//    
-//    if ([segue.identifier isEqualToString:@"photoPicker"])
-//    {
-//        PhotoPickerViewController *nextController;
-//        nextController = segue.destinationViewController;
-//    }
-//    
+//    // Return the number of sections.
+//    return 1;
 //}
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+//{
+//    // Return the number of rows in the section.
+//    return 1;
+//}
+
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -150,7 +103,15 @@
 }
 */
 
+/*
+#pragma mark - Navigation
 
-
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

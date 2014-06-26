@@ -335,15 +335,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="109"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pHI-2q-Ow9">
-                                                    <rect key="frame" x="0.0" y="0.0" width="109" height="109"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Un-BG-nC7">
+                                                    <rect key="frame" x="6" y="0.0" width="188" height="104"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="6V8-OJ-IiW" kind="push" identifier="photoPicker" id="nUY-OI-2fv"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -354,6 +351,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Me" id="ZXc-65-0yN"/>
+                    <connections>
+                        <outlet property="profilePhoto" destination="5Un-BG-nC7" id="cQW-IS-zY1"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ikn-ei-4pB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
