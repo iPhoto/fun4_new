@@ -51,17 +51,46 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 
-    return 1;
+    return 2;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc]
+    UIActionSheet *actionSheet;
+    
+    if (indexPath.row == 0)
+    {
+        actionSheet = [[UIActionSheet alloc]
                                   initWithTitle:@"Pick a profile photo"
                                   delegate:self
                                   cancelButtonTitle:@"Cancel"
                                   destructiveButtonTitle:nil
                                   otherButtonTitles:@"Take Picture", @"Choose Existing", nil];
+    }
+    else if (indexPath.row == 1)
+    {
+        UIActionSheet *editName = [[UIActionSheet alloc]
+                                initWithTitle:@"Name"
+                                delegate:self
+                                cancelButtonTitle:@"Save"
+                                destructiveButtonTitle:nil
+                                otherButtonTitles:nil];
+        
+        //UITextField *nameText = [[UITextField alloc]initWithFrame:CGRectMake(0, 44, 0, 0)];
+        //UIDatePicker *  datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 44, 0, 0)];
+        UITextField *tf = [[UITextField alloc] initWithFrame:CGRectMake(45, 30, 200, 40)];
+        tf.textColor = [UIColor colorWithRed:0/256.0 green:84/256.0 blue:129/256.0 alpha:1.0];
+        tf.font = [UIFont fontWithName:@"Helvetica-Bold" size:25];
+        tf.backgroundColor=[UIColor whiteColor];
+        tf.text=@"Hello World";
+        
+        [editName addSubview:tf];
+        //[editName showInView:self.view.superview];
+        [editName showInView:self.view];
+        
+        //Change the height value in your CGRect to change the size of the actinsheet
+        [editName setBounds:CGRectMake(0, 0, 400, 800)];
+    }
     [actionSheet showInView:self.view];
 
 }
