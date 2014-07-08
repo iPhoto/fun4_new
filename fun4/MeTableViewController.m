@@ -71,6 +71,7 @@
     
     if (indexPath.row == 0)
     {
+        //pop up the photo picker
         actionSheet = [[UIActionSheet alloc]
                                   initWithTitle:@"Pick a profile photo"
                                   delegate:self
@@ -88,6 +89,7 @@
                                 destructiveButtonTitle:nil
                                 otherButtonTitles:@"Save", nil];
         
+        editName.tag = 8888;
         //UITextField *nameText = [[UITextField alloc]initWithFrame:CGRectMake(0, 44, 0, 0)];
         //UIDatePicker *  datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 44, 0, 0)];
         UITextField *tf = [[UITextField alloc] initWithFrame:CGRectMake(45, 30, 200, 40)];
@@ -104,17 +106,27 @@
         [editName showInView:self.view];
         
         //Change the height value in your CGRect to change the size of the actinsheet
-        //[editName setBounds:CGRectMake(0, 0, 400, 800)];
-        
-        //UIWindow*   appWindow = [UIApplication sharedApplication].keyWindow;
-        
-//        [editName showInView:appWindow];
-//        [editName setFrame:CGRectMake(0.0,200.0, 320.0, 200.0)];
-//        
-        
+        [editName setBounds:CGRectMake(0, 0, 400, 800)];
+        [self performSelector: @selector(acceptInput:) withObject: editName];
     }
     [actionSheet showInView:self.view];
 
+}
+-(void)acceptInput: (UIActionSheet*)actionSheet
+{
+    
+    UITextField*    textField = (UITextField*)[actionSheet viewWithTag:8888];
+    
+    UIWindow*       appWindow = [UIApplication sharedApplication].keyWindow;
+    
+    CGRect          frame     = textField.frame;
+    
+    [appWindow insertSubview:textField aboveSubview:actionSheet];
+    
+    frame.origin.y += 60.0; // move text field to same position as on action sheet
+    
+    textField.frame = frame;
+    
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
