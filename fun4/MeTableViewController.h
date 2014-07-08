@@ -10,6 +10,10 @@
 #import <Parse/Parse.h>
 
 @interface MeTableViewController : UITableViewController<UITextFieldDelegate, UIActionSheetDelegate>
+{
+    UITextField *nameInput;
+}
+
 @property (strong, nonatomic) IBOutlet UIImageView *profilePhoto;
 @property (strong, nonatomic) IBOutlet UILabel *name;
 

@@ -18,6 +18,9 @@
 @implementation MeTableViewController
 {
     NSManagedObjectContext *managedContextObject;
+    CGRect backToOriginal;
+    UIView *popup;
+
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -36,6 +39,8 @@
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     
     managedContextObject = appDelegate.managedObjectContext;
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -81,53 +86,91 @@
     }
     else if (indexPath.row == 1)
     {
-        //pop up the text editor
-        UIActionSheet *editName = [[UIActionSheet alloc]
-                                initWithTitle:@"Name"
-                                delegate:self
-                                cancelButtonTitle:@"Cancel"
-                                destructiveButtonTitle:nil
-                                otherButtonTitles:@"Save", nil];
-        
-        editName.tag = 8888;
-        //UITextField *nameText = [[UITextField alloc]initWithFrame:CGRectMake(0, 44, 0, 0)];
-        //UIDatePicker *  datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 44, 0, 0)];
-        UITextField *tf = [[UITextField alloc] initWithFrame:CGRectMake(45, 30, 200, 40)];
-        tf.textColor = [UIColor colorWithRed:0/256.0 green:84/256.0 blue:129/256.0 alpha:1.0];
-        tf.font = [UIFont fontWithName:@"Helvetica-Bold" size:25];
-        tf.backgroundColor=[UIColor whiteColor];
-        [tf setKeyboardType:UIKeyboardTypeAlphabet];
-        tf.keyboardAppearance= UIKeyboardAppearanceAlert;
-        tf.delegate = self;
-        [tf setTag:10250];
-        
-        [editName addSubview:tf];
-        //[editName showInView:self.view.superview];
-        [editName showInView:self.view];
-        
-        //Change the height value in your CGRect to change the size of the actinsheet
-        [editName setBounds:CGRectMake(0, 0, 400, 800)];
-        [self performSelector: @selector(acceptInput:) withObject: editName];
+        [self CreateSlideOut];
+        [self slidePopup];
+
     }
     [actionSheet showInView:self.view];
 
 }
--(void)acceptInput: (UIActionSheet*)actionSheet
+
+-(void) CreateSlideOut
 {
     
-    UITextField*    textField = (UITextField*)[actionSheet viewWithTag:8888];
+    CGRect frame=CGRectMake(0, CGRectGetMaxY(self.view.bounds), 320, 300);
     
-    UIWindow*       appWindow = [UIApplication sharedApplication].keyWindow;
+    backToOriginal=frame;
     
-    CGRect          frame     = textField.frame;
+    popup=[[UIView alloc]initWithFrame:frame];
     
-    [appWindow insertSubview:textField aboveSubview:actionSheet];
+    popup.backgroundColor = [UIColor whiteColor];
     
-    frame.origin.y += 60.0; // move text field to same position as on action sheet
-    
-    textField.frame = frame;
+    [self.view addSubview:popup];
     
 }
+
+-(void) slidePopup
+{
+    
+    UIButton *doneButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
+    doneButton.frame=CGRectMake(60, 190, 200, 40);
+    doneButton.backgroundColor=[UIColor clearColor];
+    [doneButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [doneButton setTitle:@"Done" forState:UIControlStateNormal];
+    [doneButton addTarget:self action:@selector(DoneClicked:) forControlEvents:UIControlEventTouchUpInside];
+
+    UIButton *cancelButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
+    cancelButton.frame=CGRectMake(60, 300, 200, 40);
+    cancelButton.backgroundColor=[UIColor clearColor];
+    [cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
+    [cancelButton addTarget:self action:@selector(CancelClicked:) forControlEvents:UIControlEventTouchUpInside];
+
+
+    nameInput = [[UITextField alloc] initWithFrame:CGRectMake(20, 28, 280, 40)];
+    nameInput.delegate=self;
+    nameInput.autocorrectionType = UITextAutocorrectionTypeNo;
+    [nameInput setBackgroundColor:[UIColor clearColor]];
+    [nameInput setBorderStyle:UITextBorderStyleRoundedRect];
+    
+    [popup addSubview:nameInput];
+    [popup addSubview:doneButton];
+    [popup addSubview:cancelButton];
+    
+    CGRect frame=CGRectMake(0, 0, 320, 480);
+    
+    [UIView beginAnimations:nil context:nil];
+    
+    [popup setFrame:frame];
+    
+    [UIView commitAnimations];
+}
+
+-(void) removePopUp
+
+{
+    [UIView beginAnimations:nil context:nil];
+    
+    [popup setFrame:backToOriginal];
+    
+    [UIView commitAnimations];
+    
+    [nameInput resignFirstResponder];
+}
+
+-(IBAction) CancelClicked : (id) sender
+{
+    
+    [self removePopUp];
+}
+
+-(IBAction) DoneClicked : (id) sender
+{
+    [self saveMyName: nameInput.text];
+    
+    [self removePopUp];
+}
+
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
@@ -138,11 +181,6 @@
     }
     else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Choose Existing"]) {
         picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    }
-    else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Save"]) {
-        UITextField* myField = (UITextField*)[actionSheet viewWithTag:10250];
-        
-        [self saveMyName:myField.text];
     }
     [self presentModalViewController:picker animated:YES];
 
