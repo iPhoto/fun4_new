@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface MeTableViewController : UITableViewController
+@interface MeTableViewController : UITableViewController<UITextFieldDelegate, UIActionSheetDelegate>
 @property (strong, nonatomic) IBOutlet UIImageView *profilePhoto;
 @property (strong, nonatomic) IBOutlet UILabel *name;
 

@@ -94,14 +94,24 @@
         tf.textColor = [UIColor colorWithRed:0/256.0 green:84/256.0 blue:129/256.0 alpha:1.0];
         tf.font = [UIFont fontWithName:@"Helvetica-Bold" size:25];
         tf.backgroundColor=[UIColor whiteColor];
-        tf.text=@"";
+        [tf setKeyboardType:UIKeyboardTypeAlphabet];
+        tf.keyboardAppearance= UIKeyboardAppearanceAlert;
+        tf.delegate = self;
+        [tf setTag:10250];
         
         [editName addSubview:tf];
         //[editName showInView:self.view.superview];
         [editName showInView:self.view];
         
         //Change the height value in your CGRect to change the size of the actinsheet
-        [editName setBounds:CGRectMake(0, 0, 400, 800)];
+        //[editName setBounds:CGRectMake(0, 0, 400, 800)];
+        
+        //UIWindow*   appWindow = [UIApplication sharedApplication].keyWindow;
+        
+//        [editName showInView:appWindow];
+//        [editName setFrame:CGRectMake(0.0,200.0, 320.0, 200.0)];
+//        
+        
     }
     [actionSheet showInView:self.view];
 
@@ -118,7 +128,9 @@
         picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     }
     else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Save"]) {
-        [self saveMyName:@"TestName"];
+        UITextField* myField = (UITextField*)[actionSheet viewWithTag:10250];
+        
+        [self saveMyName:myField.text];
     }
     [self presentModalViewController:picker animated:YES];
 
