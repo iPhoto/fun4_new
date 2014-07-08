@@ -8,12 +8,17 @@
 
 #import "MeTableViewController.h"
 #import "PhotoPickerViewController.h"
+#import "Traveler.h"
+#import "AppDelegate.h"
 
 @interface MeTableViewController ()
 
 @end
 
 @implementation MeTableViewController
+{
+    NSManagedObjectContext *managedContextObject;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -28,11 +33,9 @@
 {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    managedContextObject = appDelegate.managedObjectContext;
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,6 +56,14 @@
 
     return 2;
 }
+//
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
+//    
+//    
+//    return cell;
+//}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -69,12 +80,13 @@
     }
     else if (indexPath.row == 1)
     {
+        //pop up the text editor
         UIActionSheet *editName = [[UIActionSheet alloc]
                                 initWithTitle:@"Name"
                                 delegate:self
-                                cancelButtonTitle:@"Save"
+                                cancelButtonTitle:@"Cancel"
                                 destructiveButtonTitle:nil
-                                otherButtonTitles:nil];
+                                otherButtonTitles:@"Save", nil];
         
         //UITextField *nameText = [[UITextField alloc]initWithFrame:CGRectMake(0, 44, 0, 0)];
         //UIDatePicker *  datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 44, 0, 0)];
@@ -82,7 +94,7 @@
         tf.textColor = [UIColor colorWithRed:0/256.0 green:84/256.0 blue:129/256.0 alpha:1.0];
         tf.font = [UIFont fontWithName:@"Helvetica-Bold" size:25];
         tf.backgroundColor=[UIColor whiteColor];
-        tf.text=@"Hello World";
+        tf.text=@"";
         
         [editName addSubview:tf];
         //[editName showInView:self.view.superview];
@@ -105,17 +117,70 @@
     else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Choose Existing"]) {
         picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     }
+    else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Save"]) {
+        [self saveMyName:@"TestName"];
+    }
     [self presentModalViewController:picker animated:YES];
 
 }
+
+
 
 - (void)imagePickerController:(UIImagePickerController *) Picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
     _profilePhoto.image = [info objectForKey:UIImagePickerControllerOriginalImage];
     
     [[Picker presentingViewController] dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void) saveMyName:(NSString *) myName{
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Traveler" inManagedObjectContext:managedContextObject];
+    
+    [fetchRequest setEntity:entity];
+    
+    NSError *error = nil;
+    NSArray *existingMe = [managedContextObject executeFetchRequest:fetchRequest error:nil];
     
     
+    if ([existingMe count] > 0)
+    {
+        [existingMe setValue: myName forKey:@"name"];
+        
+    }
+    else
+    {
+        //insert
+        Traveler *newMe = [NSEntityDescription insertNewObjectForEntityForName:@"Traveler" inManagedObjectContext:managedContextObject];
+        
+        newMe.name = myName;
+        
+        
+        //save to parse
+        PFObject *me = [PFObject objectWithClassName:@"Traveler"];
+        me[@"name"] = newMe.name;
+        
+        [me saveEventually];
+    }
+    
+    NSArray * arrayOfTravelers;
+    
+    fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Traveler"];
+    
+    arrayOfTravelers = [managedContextObject executeFetchRequest:fetchRequest
+                                                           error:&error];
+    
+    _name.text = [[arrayOfTravelers objectAtIndex:0] name];
+    
+    if ([managedContextObject save:&error])
+    {
+        NSLog(@"save successfully");
+    }
+    else
+    {
+        NSLog(@"fail to save");
+    }
     
 }
 
@@ -130,16 +195,8 @@
 //    }
 //    
 //}
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
+
+
 
 /*
 // Override to support conditional editing of the table view.

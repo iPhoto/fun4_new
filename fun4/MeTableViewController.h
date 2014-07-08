@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface MeTableViewController : UITableViewController
 @property (strong, nonatomic) IBOutlet UIImageView *profilePhoto;
+@property (strong, nonatomic) IBOutlet UILabel *name;
 
 
 @end
