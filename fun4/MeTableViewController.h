@@ -12,10 +12,12 @@
 @interface MeTableViewController : UITableViewController<UITextFieldDelegate, UIActionSheetDelegate>
 {
     UITextField *nameInput;
+    UITextField *phoneInput;
 }
 
 @property (strong, nonatomic) IBOutlet UIImageView *profilePhoto;
 @property (strong, nonatomic) IBOutlet UILabel *name;
+@property (strong, nonatomic) IBOutlet UILabel *phone;
 
 
 @end

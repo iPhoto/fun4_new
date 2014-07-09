@@ -59,7 +59,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 
-    return 2;
+    return 3;
 }
 //
 //- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -83,14 +83,22 @@
                                   cancelButtonTitle:@"Cancel"
                                   destructiveButtonTitle:nil
                                   otherButtonTitles:@"Take Picture", @"Choose Existing", nil];
+        [actionSheet showInView:self.view];
     }
     else if (indexPath.row == 1)
     {
+        //edit name
         [self CreateSlideOut];
-        [self slidePopup];
+        [self slideNamePopup];
 
     }
-    [actionSheet showInView:self.view];
+    else if (indexPath.row == 2)
+    {
+        //edit phone
+        [self CreateSlideOut];
+        [self slidePhonePopup];
+        
+    }
 
 }
 
@@ -109,7 +117,7 @@
     
 }
 
--(void) slidePopup
+-(void) slideNamePopup
 {
     
     UIButton *doneButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -117,7 +125,7 @@
     doneButton.backgroundColor=[UIColor clearColor];
     [doneButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [doneButton setTitle:@"Done" forState:UIControlStateNormal];
-    [doneButton addTarget:self action:@selector(DoneClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [doneButton addTarget:self action:@selector(NameDoneClicked:) forControlEvents:UIControlEventTouchUpInside];
 
     UIButton *cancelButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
     cancelButton.frame=CGRectMake(60, 300, 200, 40);
@@ -146,6 +154,44 @@
     [UIView commitAnimations];
 }
 
+-(void) slidePhonePopup
+{
+    
+    UIButton *doneButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
+    doneButton.frame=CGRectMake(60, 190, 200, 40);
+    doneButton.backgroundColor=[UIColor clearColor];
+    [doneButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [doneButton setTitle:@"Done" forState:UIControlStateNormal];
+    [doneButton addTarget:self action:@selector(PhoneDoneClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *cancelButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
+    cancelButton.frame=CGRectMake(60, 300, 200, 40);
+    cancelButton.backgroundColor=[UIColor clearColor];
+    [cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
+    [cancelButton addTarget:self action:@selector(CancelClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    phoneInput = [[UITextField alloc] initWithFrame:CGRectMake(20, 28, 280, 40)];
+    phoneInput.delegate=self;
+    phoneInput.autocorrectionType = UITextAutocorrectionTypeNo;
+    [phoneInput setBackgroundColor:[UIColor clearColor]];
+    [phoneInput setBorderStyle:UITextBorderStyleRoundedRect];
+    
+    [popup addSubview:phoneInput];
+    [popup addSubview:doneButton];
+    [popup addSubview:cancelButton];
+    
+    CGRect frame=CGRectMake(0, 0, 320, 480);
+    
+    [UIView beginAnimations:nil context:nil];
+    
+    [popup setFrame:frame];
+    
+    [UIView commitAnimations];
+}
+
+
 -(void) removePopUp
 
 {
@@ -156,6 +202,7 @@
     [UIView commitAnimations];
     
     [nameInput resignFirstResponder];
+    [phoneInput resignFirstResponder];
 }
 
 -(IBAction) CancelClicked : (id) sender
@@ -164,9 +211,16 @@
     [self removePopUp];
 }
 
--(IBAction) DoneClicked : (id) sender
+-(IBAction) NameDoneClicked : (id) sender
 {
     [self saveMyName: nameInput.text];
+    
+    [self removePopUp];
+}
+
+-(IBAction) PhoneDoneClicked : (id) sender
+{
+    [self saveMyPhone: phoneInput.text];
     
     [self removePopUp];
 }
@@ -246,6 +300,56 @@
     
 }
 
+- (void) saveMyPhone:(NSString *) myPhone{
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Traveler" inManagedObjectContext:managedContextObject];
+    
+    [fetchRequest setEntity:entity];
+    
+    NSError *error = nil;
+    NSArray *existingMe = [managedContextObject executeFetchRequest:fetchRequest error:nil];
+    
+    
+    if ([existingMe count] > 0)
+    {
+        [existingMe setValue: myPhone forKey:@"phoneNumber"];
+        
+    }
+    else
+    {
+        //insert
+        Traveler *newMe = [NSEntityDescription insertNewObjectForEntityForName:@"Traveler" inManagedObjectContext:managedContextObject];
+        
+        newMe.phoneNumber = myPhone;
+        
+        
+        //save to parse
+        PFObject *me = [PFObject objectWithClassName:@"Traveler"];
+        me[@"phoneNumber"] = newMe.phoneNumber;
+        
+        [me saveEventually];
+    }
+    
+    NSArray * arrayOfTravelers;
+    
+    fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Traveler"];
+    
+    arrayOfTravelers = [managedContextObject executeFetchRequest:fetchRequest
+                                                           error:&error];
+    
+    _phone.text = [[arrayOfTravelers objectAtIndex:0] phoneNumber];
+    
+    if ([managedContextObject save:&error])
+    {
+        NSLog(@"save successfully");
+    }
+    else
+    {
+        NSLog(@"fail to save");
+    }
+    
+}
 
 //- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 //{
