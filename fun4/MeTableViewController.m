@@ -8,8 +8,8 @@
 
 #import "MeTableViewController.h"
 #import "PhotoPickerViewController.h"
-#import "Traveler.h"
 #import "AppDelegate.h"
+#import "Traveler.h"
 
 @interface MeTableViewController ()
 
@@ -34,13 +34,9 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    
     managedContextObject = appDelegate.managedObjectContext;
-    
-    
+    [super viewDidLoad];
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,17 +54,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
     return 3;
 }
-//
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
-//    
-//    
-//    return cell;
-//}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -97,22 +84,16 @@
         //edit phone
         [self CreateSlideOut];
         [self slidePhonePopup];
-        
     }
-
 }
 
 -(void) CreateSlideOut
 {
     
     CGRect frame=CGRectMake(0, CGRectGetMaxY(self.view.bounds), 320, 300);
-    
     backToOriginal=frame;
-    
     popup=[[UIView alloc]initWithFrame:frame];
-    
     popup.backgroundColor = [UIColor whiteColor];
-    
     [self.view addSubview:popup];
     
 }
@@ -196,32 +177,26 @@
 
 {
     [UIView beginAnimations:nil context:nil];
-    
     [popup setFrame:backToOriginal];
-    
     [UIView commitAnimations];
-    
     [nameInput resignFirstResponder];
     [phoneInput resignFirstResponder];
 }
 
 -(IBAction) CancelClicked : (id) sender
 {
-    
     [self removePopUp];
 }
 
 -(IBAction) NameDoneClicked : (id) sender
 {
     [self saveMyName: nameInput.text];
-    
     [self removePopUp];
 }
 
 -(IBAction) PhoneDoneClicked : (id) sender
 {
     [self saveMyPhone: phoneInput.text];
-    
     [self removePopUp];
 }
 
@@ -229,23 +204,20 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
-    
+        
     if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Take Picture"]) {
         picker.sourceType = UIImagePickerControllerSourceTypeCamera;
     }
     else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Choose Existing"]) {
         picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     }
-    [self presentModalViewController:picker animated:YES];
-
+    [self presentViewController:picker animated:YES completion:nil];
 }
 
 
-
-- (void)imagePickerController:(UIImagePickerController *) Picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    
+- (void)imagePickerController:(UIImagePickerController *) Picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
     _profilePhoto.image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    
     [[Picker presentingViewController] dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -271,7 +243,6 @@
         Traveler *newMe = [NSEntityDescription insertNewObjectForEntityForName:@"Traveler" inManagedObjectContext:managedContextObject];
         
         newMe.name = myName;
-        
         
         //save to parse
         PFObject *me = [PFObject objectWithClassName:@"Traveler"];
@@ -401,8 +372,6 @@
     return YES;
 }
 */
-
-
 
 
 @end

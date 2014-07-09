@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface MeTableViewController : UITableViewController<UITextFieldDelegate, UIActionSheetDelegate>
+@interface MeTableViewController : UITableViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate, UIActionSheetDelegate>
 {
     UITextField *nameInput;
     UITextField *phoneInput;
