@@ -14,5 +14,6 @@
 
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * phoneNumber;
+@property (nonatomic, retain) UIImage * picture;
 
 @end

@@ -20,6 +20,7 @@
     NSManagedObjectContext *managedContextObject;
     CGRect backToOriginal;
     UIView *popup;
+    Traveler *me;
 
 }
 
@@ -36,7 +37,34 @@
 {
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     managedContextObject = appDelegate.managedObjectContext;
+    [self loadMe];
     [super viewDidLoad];
+}
+
+- (void)loadMe
+{
+    NSError *error = nil;
+    NSFetchRequest *fetchRequest;
+    NSArray * arrayOfTravelers;
+    
+    
+    fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Traveler"];
+    
+    arrayOfTravelers = [managedContextObject executeFetchRequest:fetchRequest
+                                                           error:&error];
+    if ([arrayOfTravelers count] > 0)
+    {
+        _name.text = [[arrayOfTravelers objectAtIndex:0] name];
+        _phone.text = [[arrayOfTravelers objectAtIndex:0] phoneNumber];
+        me = [arrayOfTravelers objectAtIndex:0];
+    }
+    
+    
+    if (error != nil) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -219,46 +247,27 @@
 {
     _profilePhoto.image = [info objectForKey:UIImagePickerControllerOriginalImage];
     [[Picker presentingViewController] dismissViewControllerAnimated:YES completion:nil];
+    
+    //save image to core data
+    me.picture = [info objectForKey:UIImagePickerControllerOriginalImage];
 }
 
 - (void) saveMyName:(NSString *) myName{
     
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Traveler" inManagedObjectContext:managedContextObject];
-    
-    [fetchRequest setEntity:entity];
-    
     NSError *error = nil;
-    NSArray *existingMe = [managedContextObject executeFetchRequest:fetchRequest error:nil];
+
     
-    
-    if ([existingMe count] > 0)
-    {
-        [existingMe setValue: myName forKey:@"name"];
+    [me setValue: myName forKey:@"name"];
         
-    }
-    else
-    {
-        //insert
-        Traveler *newMe = [NSEntityDescription insertNewObjectForEntityForName:@"Traveler" inManagedObjectContext:managedContextObject];
-        
-        newMe.name = myName;
-        
-        //save to parse
-        PFObject *me = [PFObject objectWithClassName:@"Traveler"];
-        me[@"name"] = newMe.name;
-        
-        [me saveEventually];
-    }
     
-    NSArray * arrayOfTravelers;
+    //save to parse
+    PFObject *meAtServer = [PFObject objectWithClassName:@"Traveler"];
+    meAtServer[@"name"] = me.name;
     
-    fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Traveler"];
+    [meAtServer saveEventually];
     
-    arrayOfTravelers = [managedContextObject executeFetchRequest:fetchRequest
-                                                           error:&error];
     
-    _name.text = [[arrayOfTravelers objectAtIndex:0] name];
+    _name.text = me.name;
     
     if ([managedContextObject save:&error])
     {
@@ -273,43 +282,21 @@
 
 - (void) saveMyPhone:(NSString *) myPhone{
     
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Traveler" inManagedObjectContext:managedContextObject];
     
-    [fetchRequest setEntity:entity];
     
     NSError *error = nil;
-    NSArray *existingMe = [managedContextObject executeFetchRequest:fetchRequest error:nil];
     
     
-    if ([existingMe count] > 0)
-    {
-        [existingMe setValue: myPhone forKey:@"phoneNumber"];
-        
-    }
-    else
-    {
-        //insert
-        Traveler *newMe = [NSEntityDescription insertNewObjectForEntityForName:@"Traveler" inManagedObjectContext:managedContextObject];
-        
-        newMe.phoneNumber = myPhone;
-        
-        
-        //save to parse
-        PFObject *me = [PFObject objectWithClassName:@"Traveler"];
-        me[@"phoneNumber"] = newMe.phoneNumber;
-        
-        [me saveEventually];
-    }
+    [me setValue: myPhone forKey:@"phoneNumber"];
     
-    NSArray * arrayOfTravelers;
+    //save to parse
+    PFObject *meAtServer = [PFObject objectWithClassName:@"Traveler"];
+    meAtServer[@"phoneNumber"] = me.phoneNumber;
     
-    fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Traveler"];
+    [meAtServer saveEventually];
     
-    arrayOfTravelers = [managedContextObject executeFetchRequest:fetchRequest
-                                                           error:&error];
     
-    _phone.text = [[arrayOfTravelers objectAtIndex:0] phoneNumber];
+    _phone.text = me.phoneNumber;
     
     if ([managedContextObject save:&error])
     {
@@ -319,7 +306,29 @@
     {
         NSLog(@"fail to save");
     }
+
+}
     
+
+
++ (BOOL)allowsReverseTransformation {
+    return YES;
+}
+
++ (Class)transformedValueClass {
+    return [NSData class];
+}
+
+
+- (id)transformedValue:(id)value {
+    NSData *data = UIImagePNGRepresentation(value);
+    return data;
+}
+
+
+- (id)reverseTransformedValue:(id)value {
+    return [UIImage imageWithData:value];
+
 }
 
 //- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

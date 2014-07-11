@@ -8,16 +8,22 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import <Foundation/NSValueTransformer.h>
 
-@interface MeTableViewController : UITableViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate, UIActionSheetDelegate>
+@interface MeTableViewController : UITableViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate, UIActionSheetDelegate>
 {
     UITextField *nameInput;
     UITextField *phoneInput;
 }
-
 @property (strong, nonatomic) IBOutlet UIImageView *profilePhoto;
 @property (strong, nonatomic) IBOutlet UILabel *name;
 @property (strong, nonatomic) IBOutlet UILabel *phone;
 
+@end
 
+
+@interface SaveImageInterface : NSValueTransformer
+{
+    
+}
 @end
