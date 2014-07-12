@@ -252,14 +252,26 @@
     me.picture = [info objectForKey:UIImagePickerControllerOriginalImage];
 }
 
-- (void) saveMyName:(NSString *) myName{
+- (void) saveMyName:(NSString *) myName {
     
     NSError *error = nil;
 
     
-    [me setValue: myName forKey:@"name"];
+    if (me == nil)
+    {
+        //insert me in core data
+        me = [NSEntityDescription insertNewObjectForEntityForName:@"Traveler" inManagedObjectContext:managedContextObject];
         
+        me.name = myName;
+        
+    }
+    else
+    {
+        //update me in core data
+        [me setValue: myName forKey:@"name"];
+    }
     
+   
     //save to parse
     PFObject *meAtServer = [PFObject objectWithClassName:@"Traveler"];
     meAtServer[@"name"] = me.name;
@@ -287,7 +299,19 @@
     NSError *error = nil;
     
     
-    [me setValue: myPhone forKey:@"phoneNumber"];
+    
+    if (me == nil)
+    {
+        //insert me in core data
+        me = [NSEntityDescription insertNewObjectForEntityForName:@"Traveler" inManagedObjectContext:managedContextObject];
+        
+        me.phoneNumber = myPhone;
+    }
+    else
+    {
+        //update me in core data
+        [me setValue: myPhone forKey:@"phoneNumber"];
+    }
     
     //save to parse
     PFObject *meAtServer = [PFObject objectWithClassName:@"Traveler"];
