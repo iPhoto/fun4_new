@@ -256,7 +256,6 @@
 - (void)imagePickerController:(UIImagePickerController *) Picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     
-    NSError *error = nil;
     _profilePhoto.image = [info objectForKey:UIImagePickerControllerOriginalImage];
     [[Picker presentingViewController] dismissViewControllerAnimated:YES completion:nil];
 
@@ -269,7 +268,6 @@
         me = [NSEntityDescription insertNewObjectForEntityForName:@"Traveler" inManagedObjectContext:managedContextObject];
         
         me.picture = _profilePhoto.image;
-        [managedContextObject save:&error];
     }
     else
     {
@@ -277,13 +275,13 @@
         me.picture = _profilePhoto.image;
         
     }
+    [self saveMeToCoreData];
+    [self saveMeToServer];
 
 }
 
 - (void) saveMyName:(NSString *) myName {
     
-    NSError *error = nil;
-
     [self loadMe];
     if (me == nil)
     {
@@ -298,14 +296,8 @@
         //update me in core data
         [me setValue: myName forKey:@"name"];
     }
-    if ([managedContextObject save:&error])
-    {
-        NSLog(@"save successfully");
-    }
-    else
-    {
-        NSLog(@"fail to save");
-    }
+    
+    [self saveMeToCoreData];
     
     _name.text = me.name;
   
@@ -320,7 +312,6 @@
 
 - (void) saveMyPhone:(NSString *) myPhone{
     
-    NSError *error = nil;
     
     [self loadMe];
     if (me == nil)
@@ -336,14 +327,7 @@
         [me setValue: myPhone forKey:@"phoneNumber"];
     }
     
-    if ([managedContextObject save:&error])
-    {
-        NSLog(@"save successfully");
-    }
-    else
-    {
-        NSLog(@"fail to save");
-    }
+    [self saveMeToCoreData];
     
     _phone.text = me.phoneNumber;
 
@@ -355,7 +339,42 @@
     
 
 }
-    
+
+- (void) saveMeToCoreData
+{
+    NSError *error = nil;
+    if ([managedContextObject save:&error])
+    {
+        NSLog(@"save successfully");
+    }
+    else
+    {
+        NSLog(@"fail to save");
+    }
+}
+
+- (void) saveMeToServer
+{
+    NSData* data = UIImageJPEGRepresentation(_profilePhoto.image, 1);
+    PFFile *imageFile = [PFFile fileWithName:@"me.jpg" data:data];
+
+    [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            PFObject *meAtServer = [PFObject objectWithClassName:@"Traveler"];
+            [meAtServer setObject:imageFile forKey:@"picture"];
+            
+            
+            [meAtServer saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (!error) {
+                    NSLog(@"Picture saved.");                }
+                else{
+                    // Log details of the failure
+                    NSLog(@"Picture saving error: %@ %@", error, [error userInfo]);
+                }
+            }];
+        }
+    }];
+}
 
 
 + (BOOL)allowsReverseTransformation {

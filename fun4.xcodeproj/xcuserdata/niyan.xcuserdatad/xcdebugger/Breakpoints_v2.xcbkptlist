@@ -792,11 +792,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "fun4/MeTableViewController.m"
-            timestampString = "426822354.025768"
+            timestampString = "426876830.631504"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "453"
-            endingLineNumber = "453">
+            startingLineNumber = "471"
+            endingLineNumber = "471">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -890,43 +890,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "fun4/MeTableViewController.m"
-            timestampString = "426822354.025768"
+            timestampString = "426874413.493004"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "285"
-            endingLineNumber = "285"
-            landmarkName = "-saveMyName:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "fun4/MeTableViewController.m"
-            timestampString = "426822354.025768"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "304"
-            endingLineNumber = "304"
-            landmarkName = "-saveMyName:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "fun4/MeTableViewController.m"
-            timestampString = "426822975.872612"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "266"
-            endingLineNumber = "266"
+            startingLineNumber = "265"
+            endingLineNumber = "265"
             landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
             landmarkType = "5">
          </BreakpointContent>
@@ -970,11 +938,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "fun4/MeTableViewController.m"
-            timestampString = "426822975.872612"
+            timestampString = "426874413.493004"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "261"
-            endingLineNumber = "261"
+            startingLineNumber = "260"
+            endingLineNumber = "260"
             landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
             landmarkType = "5">
          </BreakpointContent>
@@ -986,11 +954,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "fun4/MeTableViewController.m"
-            timestampString = "426822645.527566"
+            timestampString = "426874413.493004"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "271"
-            endingLineNumber = "271"
+            startingLineNumber = "270"
+            endingLineNumber = "270"
+            landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "fun4/MeTableViewController.m"
+            timestampString = "426874413.493004"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "279"
+            endingLineNumber = "279"
             landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
             landmarkType = "5">
          </BreakpointContent>
