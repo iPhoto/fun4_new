@@ -298,17 +298,6 @@
         //update me in core data
         [me setValue: myName forKey:@"name"];
     }
-    
-   
-    //save to parse
-    PFObject *meAtServer = [PFObject objectWithClassName:@"Traveler"];
-    meAtServer[@"name"] = me.name;
-    
-    [meAtServer saveEventually];
-    
-    
-    _name.text = me.name;
-    
     if ([managedContextObject save:&error])
     {
         NSLog(@"save successfully");
@@ -317,6 +306,15 @@
     {
         NSLog(@"fail to save");
     }
+    
+    _name.text = me.name;
+  
+    //save to parse
+    PFObject *meAtServer = [PFObject objectWithClassName:@"Traveler"];
+    meAtServer[@"name"] = me.name;
+    
+    [meAtServer saveEventually];
+    
     
 }
 
@@ -338,14 +336,6 @@
         [me setValue: myPhone forKey:@"phoneNumber"];
     }
     
-    //save to parse
-    PFObject *meAtServer = [PFObject objectWithClassName:@"Traveler"];
-    meAtServer[@"phoneNumber"] = me.phoneNumber;
-    
-    [meAtServer saveEventually];
-    
-    _phone.text = me.phoneNumber;
-    
     if ([managedContextObject save:&error])
     {
         NSLog(@"save successfully");
@@ -354,6 +344,15 @@
     {
         NSLog(@"fail to save");
     }
+    
+    _phone.text = me.phoneNumber;
+
+    //save to parse
+    PFObject *meAtServer = [PFObject objectWithClassName:@"Traveler"];
+    meAtServer[@"phoneNumber"] = me.phoneNumber;
+    
+    [meAtServer saveEventually];
+    
 
 }
     
