@@ -3,7 +3,7 @@
     <entity name="Traveler" representedClassName="Traveler" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="picture" optional="YES" attributeType="Transformable" valueTransformerName="MeTableViewController" syncable="YES"/>
+        <attribute name="picture" optional="YES" attributeType="Transformable" valueTransformerName="MeTableViewController" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
     </entity>
     <elements>
         <element name="Traveler" positionX="-63" positionY="-18" width="128" height="88"/>

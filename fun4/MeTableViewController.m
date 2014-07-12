@@ -54,9 +54,11 @@
                                                            error:&error];
     if ([arrayOfTravelers count] > 0)
     {
-        _name.text = [[arrayOfTravelers objectAtIndex:0] name];
-        _phone.text = [[arrayOfTravelers objectAtIndex:0] phoneNumber];
         me = [arrayOfTravelers objectAtIndex:0];
+        _name.text = me.name;
+        _phone.text = me.phoneNumber;
+        _profilePhoto.image = me.picture;
+
     }
     
     
@@ -249,7 +251,22 @@
     [[Picker presentingViewController] dismissViewControllerAnimated:YES completion:nil];
     
     //save image to core data
-    me.picture = [info objectForKey:UIImagePickerControllerOriginalImage];
+    if (me == nil)
+    {
+        //insert me in core data
+        me = [NSEntityDescription insertNewObjectForEntityForName:@"Traveler" inManagedObjectContext:managedContextObject];
+        
+        me.picture = _profilePhoto.image;
+
+        
+    }
+    else
+    {
+        //update me in core data
+        me.picture = _profilePhoto.image;
+        
+    }
+
 }
 
 - (void) saveMyName:(NSString *) myName {
@@ -294,11 +311,7 @@
 
 - (void) saveMyPhone:(NSString *) myPhone{
     
-    
-    
     NSError *error = nil;
-    
-    
     
     if (me == nil)
     {
@@ -318,7 +331,6 @@
     meAtServer[@"phoneNumber"] = me.phoneNumber;
     
     [meAtServer saveEventually];
-    
     
     _phone.text = me.phoneNumber;
     
