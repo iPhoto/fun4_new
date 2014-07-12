@@ -32,6 +32,7 @@
 		BC8E8F4118FB2413008D8C51 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8E8F3E18FB236D008D8C51 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BC91AAF01909DA1B004B2135 /* AttractionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC91AAEF1909DA1B004B2135 /* AttractionDetailViewController.m */; };
 		BC91AAF51909ECD2004B2135 /* Attraction.m in Sources */ = {isa = PBXBuildFile; fileRef = BC91AAF41909ECD2004B2135 /* Attraction.m */; };
+		BC921EBC1971D700009A4488 /* PreferenceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC921EBB1971D700009A4488 /* PreferenceTableViewController.m */; };
 		BC94924D190F2D4500EC956D /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BC949249190F2D4500EC956D /* AcousticModelEnglish.bundle */; };
 		BC94924E190F2D4500EC956D /* AcousticModelSpanish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BC94924A190F2D4500EC956D /* AcousticModelSpanish.bundle */; };
 		BC94924F190F2D4500EC956D /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC94924B190F2D4500EC956D /* OpenEars.framework */; };
@@ -102,6 +103,8 @@
 		BC91AAF11909EC02004B2135 /* attractionDetailProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = attractionDetailProtocol.h; sourceTree = "<group>"; };
 		BC91AAF31909ECD2004B2135 /* Attraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attraction.h; sourceTree = "<group>"; };
 		BC91AAF41909ECD2004B2135 /* Attraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Attraction.m; sourceTree = "<group>"; };
+		BC921EBA1971D700009A4488 /* PreferenceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferenceTableViewController.h; sourceTree = "<group>"; };
+		BC921EBB1971D700009A4488 /* PreferenceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferenceTableViewController.m; sourceTree = "<group>"; };
 		BC949249190F2D4500EC956D /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
 		BC94924A190F2D4500EC956D /* AcousticModelSpanish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelSpanish.bundle; sourceTree = "<group>"; };
 		BC94924B190F2D4500EC956D /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
@@ -247,6 +250,8 @@
 				BCF256DD194E19A5007DADC5 /* MeTableViewController.m */,
 				BCF256D4194A838E007DADC5 /* PhotoPickerViewController.h */,
 				BCF256D5194A838E007DADC5 /* PhotoPickerViewController.m */,
+				BC921EBA1971D700009A4488 /* PreferenceTableViewController.h */,
+				BC921EBB1971D700009A4488 /* PreferenceTableViewController.m */,
 				BCF256C819468C38007DADC5 /* PreferenceViewController.h */,
 				BCF256C919468C38007DADC5 /* PreferenceViewController.m */,
 				BC9492551911CF5800EC956D /* DynamicSpeechRecognition.h */,
@@ -421,6 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC921EBC1971D700009A4488 /* PreferenceTableViewController.m in Sources */,
 				BC9492571911CF5800EC956D /* DynamicSpeechRecognition.m in Sources */,
 				BCF256D6194A838E007DADC5 /* PhotoPickerViewController.m in Sources */,
 				BC91AAF51909ECD2004B2135 /* Attraction.m in Sources */,
