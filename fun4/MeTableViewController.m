@@ -38,6 +38,7 @@
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     managedContextObject = appDelegate.managedObjectContext;
     [self loadMe];
+    [self displayMe];
     [super viewDidLoad];
 }
 
@@ -55,16 +56,23 @@
     if ([arrayOfTravelers count] > 0)
     {
         me = [arrayOfTravelers objectAtIndex:0];
-        _name.text = me.name;
-        _phone.text = me.phoneNumber;
-        _profilePhoto.image = me.picture;
 
     }
-    
     
     if (error != nil) {
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
+    }
+
+}
+
+-(void)displayMe
+{
+    if (me != nil)
+    {
+        _name.text = me.name;
+        _phone.text = me.phoneNumber;
+        _profilePhoto.image = me.picture;
     }
 
 }
@@ -247,9 +255,13 @@
 
 - (void)imagePickerController:(UIImagePickerController *) Picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
+    
+    NSError *error = nil;
     _profilePhoto.image = [info objectForKey:UIImagePickerControllerOriginalImage];
     [[Picker presentingViewController] dismissViewControllerAnimated:YES completion:nil];
-    
+
+    [self loadMe];
+
     //save image to core data
     if (me == nil)
     {
@@ -257,8 +269,7 @@
         me = [NSEntityDescription insertNewObjectForEntityForName:@"Traveler" inManagedObjectContext:managedContextObject];
         
         me.picture = _profilePhoto.image;
-
-        
+        [managedContextObject save:&error];
     }
     else
     {
@@ -273,7 +284,7 @@
     
     NSError *error = nil;
 
-    
+    [self loadMe];
     if (me == nil)
     {
         //insert me in core data
@@ -313,6 +324,7 @@
     
     NSError *error = nil;
     
+    [self loadMe];
     if (me == nil)
     {
         //insert me in core data
