@@ -397,6 +397,22 @@
 
 }
 
+//- (IBAction)deleteCoreData:(id)sender {
+//    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+//    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Traveler" inManagedObjectContext:managedContextObject];
+//    
+//    // Optionally add an NSPredicate if you only want to delete some of the objects.
+//    
+//    [fetchRequest setEntity:entity];
+//    
+//    NSArray *myObjectsToDelete = [managedContextObject executeFetchRequest:fetchRequest error:nil];
+//    
+//    for (Traveler *objectToDelete in myObjectsToDelete) {
+//        [managedContextObject deleteObject:objectToDelete];
+//    }
+//    
+//    
+//}
 //- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 //{
 //    

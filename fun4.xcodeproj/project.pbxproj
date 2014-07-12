@@ -10,7 +10,6 @@
 		BC47FEF61932BFFE00725384 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC47FEF51932BFFE00725384 /* CoreData.framework */; };
 		BC47FEFA1932C06600725384 /* fun4.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC47FEF81932C06600725384 /* fun4.xcdatamodeld */; };
 		BC47FF031934121A00725384 /* Traveler.m in Sources */ = {isa = PBXBuildFile; fileRef = BC47FF021934121A00725384 /* Traveler.m */; };
-		BC47FF09193416FB00725384 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC47FF08193416FB00725384 /* MeViewController.m */; };
 		BC783A2C18F4D0D200BC26EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC783A2B18F4D0D200BC26EB /* Foundation.framework */; };
 		BC783A2E18F4D0D200BC26EB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC783A2D18F4D0D200BC26EB /* CoreGraphics.framework */; };
 		BC783A3018F4D0D200BC26EB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC783A2F18F4D0D200BC26EB /* UIKit.framework */; };
@@ -48,7 +47,6 @@
 		BCF256C3193E9F20007DADC5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF256C2193E9F20007DADC5 /* Security.framework */; };
 		BCF256C6193E9F2E007DADC5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF256C4193E9F2E007DADC5 /* StoreKit.framework */; };
 		BCF256C7193E9F2E007DADC5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF256C5193E9F2E007DADC5 /* SystemConfiguration.framework */; };
-		BCF256CA19468C38007DADC5 /* PreferenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF256C919468C38007DADC5 /* PreferenceViewController.m */; };
 		BCF256D6194A838E007DADC5 /* PhotoPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF256D5194A838E007DADC5 /* PhotoPickerViewController.m */; };
 		BCF256DE194E19A6007DADC5 /* MeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF256DD194E19A5007DADC5 /* MeTableViewController.m */; };
 /* End PBXBuildFile section */
@@ -68,8 +66,6 @@
 		BC47FEF91932C06600725384 /* fun4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = fun4.xcdatamodel; sourceTree = "<group>"; };
 		BC47FF011934121A00725384 /* Traveler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Traveler.h; sourceTree = "<group>"; };
 		BC47FF021934121A00725384 /* Traveler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Traveler.m; sourceTree = "<group>"; };
-		BC47FF07193416FB00725384 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
-		BC47FF08193416FB00725384 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
 		BC783A2818F4D0D200BC26EB /* fun4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fun4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC783A2B18F4D0D200BC26EB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BC783A2D18F4D0D200BC26EB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -121,8 +117,6 @@
 		BCF256C2193E9F20007DADC5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BCF256C4193E9F2E007DADC5 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		BCF256C5193E9F2E007DADC5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		BCF256C819468C38007DADC5 /* PreferenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferenceViewController.h; sourceTree = "<group>"; };
-		BCF256C919468C38007DADC5 /* PreferenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferenceViewController.m; sourceTree = "<group>"; };
 		BCF256D4194A838E007DADC5 /* PhotoPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoPickerViewController.h; sourceTree = "<group>"; };
 		BCF256D5194A838E007DADC5 /* PhotoPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoPickerViewController.m; sourceTree = "<group>"; };
 		BCF256DC194E19A5007DADC5 /* MeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeTableViewController.h; sourceTree = "<group>"; };
@@ -244,16 +238,12 @@
 				BC8E8F3918FB1F42008D8C51 /* SearchViewController.m */,
 				BC91AAEE1909DA1B004B2135 /* AttractionDetailViewController.h */,
 				BC91AAEF1909DA1B004B2135 /* AttractionDetailViewController.m */,
-				BC47FF07193416FB00725384 /* MeViewController.h */,
-				BC47FF08193416FB00725384 /* MeViewController.m */,
 				BCF256DC194E19A5007DADC5 /* MeTableViewController.h */,
 				BCF256DD194E19A5007DADC5 /* MeTableViewController.m */,
 				BCF256D4194A838E007DADC5 /* PhotoPickerViewController.h */,
 				BCF256D5194A838E007DADC5 /* PhotoPickerViewController.m */,
 				BC921EBA1971D700009A4488 /* PreferenceTableViewController.h */,
 				BC921EBB1971D700009A4488 /* PreferenceTableViewController.m */,
-				BCF256C819468C38007DADC5 /* PreferenceViewController.h */,
-				BCF256C919468C38007DADC5 /* PreferenceViewController.m */,
 				BC9492551911CF5800EC956D /* DynamicSpeechRecognition.h */,
 				BC9492561911CF5800EC956D /* DynamicSpeechRecognition.m */,
 				BC783A3218F4D0D200BC26EB /* Supporting Files */,
@@ -433,10 +423,8 @@
 				BC47FEFA1932C06600725384 /* fun4.xcdatamodeld in Sources */,
 				BCF256DE194E19A6007DADC5 /* MeTableViewController.m in Sources */,
 				BC8E8F4118FB2413008D8C51 /* JSONKit.m in Sources */,
-				BCF256CA19468C38007DADC5 /* PreferenceViewController.m in Sources */,
 				BC783A4218F4D0D200BC26EB /* ViewController.m in Sources */,
 				BC8E8F2E18FAEC20008D8C51 /* AttractionsTableViewController.m in Sources */,
-				BC47FF09193416FB00725384 /* MeViewController.m in Sources */,
 				BC91AAF01909DA1B004B2135 /* AttractionDetailViewController.m in Sources */,
 				BC8E8F3A18FB1F42008D8C51 /* SearchViewController.m in Sources */,
 				BC783A3C18F4D0D200BC26EB /* AppDelegate.m in Sources */,
