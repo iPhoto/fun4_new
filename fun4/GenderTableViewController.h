@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "coTravelerGenderProtocol.h"
 
-@interface GenderTableViewController : UITableViewController
+@interface GenderTableViewController : UITableViewController <coTravelerGenderProtocol>
 
 @end

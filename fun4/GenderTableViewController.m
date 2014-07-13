@@ -7,9 +7,12 @@
 //
 
 #import "GenderTableViewController.h"
+#import "coTravelerGenderProtocol.h"
+#import "PreferenceTableViewController.h"
 
 @interface GenderTableViewController ()
-
+    @property (nonatomic) int coTravelerGender;
+    @property (nonatomic, weak) id<coTravelerGenderProtocol> delegate;
 @end
 
 @implementation GenderTableViewController
@@ -28,7 +31,7 @@
 
 - (void)viewDidLoad
 {
-    genderList = [[NSArray alloc] initWithObjects:@"Mail", @"Female", @"Doesn't Matter", nil];
+    genderList = [[NSArray alloc] initWithObjects:@"Male", @"Female", @"Doesn't Matter", nil];
     genderSelection = -1;
     
     [super viewDidLoad];
@@ -77,6 +80,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     genderSelection = indexPath.row;
     [tableView reloadData];
+    PreferenceTableViewController *nextController = [PreferenceTableViewController alloc];
+    nextController.delegate = self;
+//    [self.navigationController pushViewController:nextController animated:YES];
+}
+
+- (NSInteger) coTravelerGender
+{
+    return genderSelection;
 }
 
 /*

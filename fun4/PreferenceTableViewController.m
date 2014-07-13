@@ -7,12 +7,15 @@
 //
 
 #import "PreferenceTableViewController.h"
+#import "GenderTableViewController.h"
 #import "AppDelegate.h"
 #import "Traveler.h"
 
 @interface PreferenceTableViewController ()
-
+{
+}
 @end
+
 
 @implementation PreferenceTableViewController
 {
@@ -20,9 +23,10 @@
     CGRect backToOriginal;
     UIView *popup;
     Traveler *me;
-
-
+    //NSArray *preferenceList;
 }
+
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -37,7 +41,16 @@
 {
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     managedContextObject = appDelegate.managedObjectContext;
+    
+//    preferenceList = [[NSArray alloc] initWithObjects:@"Co-traveler Gender", @"Transportation", @"Lodging", @"Food", nil];
+    _coTravelerGenderLabel.text = [NSString stringWithFormat:@"%d", [self.delegate coTravelerGender]];
     [super viewDidLoad];
+    
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    _coTravelerGenderLabel.text = [NSString stringWithFormat:@"%d", [self.delegate coTravelerGender]];
     
 }
 
@@ -59,12 +72,31 @@
     return 4;
 }
 
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    static NSString *CellIdentifier = @"Cell";
+//    
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//    
+//    if (cell == nil) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+//    }
+//    
+//    cell.textLabel.text = [preferenceList objectAtIndex:indexPath.row];
+//    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//    
+//    return cell;
+//    
+//}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
     if (indexPath.row == 0)
     {
-        
+//        GenderTableViewController *nextController = [self.storyboard instantiateViewControllerWithIdentifier:@"GenderTableView"];
+//        [self.navigationController pushViewController:nextController animated:YES];
+
     }
     else if (indexPath.row == 1)
     {

@@ -281,18 +281,11 @@
                 }
                 
             }
-            
-            
-
         }
         else
         {
             NSLog(@"connection failed");
         }
-
-
-        
-
     }
     return;
     

@@ -104,6 +104,7 @@
 		BC921EBB1971D700009A4488 /* PreferenceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferenceTableViewController.m; sourceTree = "<group>"; };
 		BC921EBD1972EFE8009A4488 /* GenderTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenderTableViewController.h; sourceTree = "<group>"; };
 		BC921EBE1972EFE8009A4488 /* GenderTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenderTableViewController.m; sourceTree = "<group>"; };
+		BC921EC019730055009A4488 /* coTravelerGenderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = coTravelerGenderProtocol.h; sourceTree = "<group>"; };
 		BC949249190F2D4500EC956D /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
 		BC94924A190F2D4500EC956D /* AcousticModelSpanish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelSpanish.bundle; sourceTree = "<group>"; };
 		BC94924B190F2D4500EC956D /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
@@ -297,6 +298,7 @@
 			children = (
 				BC8E8F2618FAE7F6008D8C51 /* searchCriteriaProtocol.h */,
 				BC91AAF11909EC02004B2135 /* attractionDetailProtocol.h */,
+				BC921EC019730055009A4488 /* coTravelerGenderProtocol.h */,
 			);
 			name = protocols;
 			sourceTree = "<group>";

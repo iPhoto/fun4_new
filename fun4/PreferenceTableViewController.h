@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "coTravelerGenderProtocol.h"
 
 @interface PreferenceTableViewController : UITableViewController
+@property (strong, nonatomic) IBOutlet UILabel *coTravelerGenderLabel;
+@property (weak, nonatomic) id <coTravelerGenderProtocol> delegate;
 
 @end
