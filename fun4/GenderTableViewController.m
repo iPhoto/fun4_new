@@ -15,6 +15,7 @@
 @implementation GenderTableViewController
 {
     NSArray *genderList;
+    int genderSelection;
 
 }
 - (id)initWithStyle:(UITableViewStyle)style
@@ -28,6 +29,8 @@
 - (void)viewDidLoad
 {
     genderList = [[NSArray alloc] initWithObjects:@"Mail", @"Female", @"Doesn't Matter", nil];
+    genderSelection = -1;
+    
     [super viewDidLoad];
 }
 
@@ -54,25 +57,27 @@
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
     cell.textLabel.text = [genderList objectAtIndex:indexPath.row];
+    cell.accessoryType = UITableViewCellAccessoryNone; // reset the cell accessory to none
     
+    if (indexPath.row == genderSelection)
+    {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    
+
     return cell;
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    genderSelection = indexPath.row;
+    [tableView reloadData];
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.
