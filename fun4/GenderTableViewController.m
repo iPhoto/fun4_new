@@ -73,16 +73,13 @@
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
     
-
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     genderSelection = indexPath.row;
     [tableView reloadData];
-    PreferenceTableViewController *nextController = [PreferenceTableViewController alloc];
-    nextController.delegate = self;
-//    [self.navigationController pushViewController:nextController animated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (NSInteger) coTravelerGender

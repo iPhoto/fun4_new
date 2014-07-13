@@ -300,12 +300,6 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lpd-nj-Anv">
-                                                    <rect key="frame" x="199" y="11" width="108" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -369,9 +363,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Share" id="rZ9-g1-JfP"/>
-                    <connections>
-                        <outlet property="coTravelerGenderLabel" destination="Lpd-nj-Anv" id="75R-Dm-qQl"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YTJ-sh-JcZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -43,16 +43,10 @@
     managedContextObject = appDelegate.managedObjectContext;
     
 //    preferenceList = [[NSArray alloc] initWithObjects:@"Co-traveler Gender", @"Transportation", @"Lodging", @"Food", nil];
-    _coTravelerGenderLabel.text = [NSString stringWithFormat:@"%d", [self.delegate coTravelerGender]];
     [super viewDidLoad];
     
 }
 
-- (void) viewWillAppear:(BOOL)animated
-{
-    _coTravelerGenderLabel.text = [NSString stringWithFormat:@"%d", [self.delegate coTravelerGender]];
-    
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -94,8 +88,6 @@
 
     if (indexPath.row == 0)
     {
-//        GenderTableViewController *nextController = [self.storyboard instantiateViewControllerWithIdentifier:@"GenderTableView"];
-//        [self.navigationController pushViewController:nextController animated:YES];
 
     }
     else if (indexPath.row == 1)
