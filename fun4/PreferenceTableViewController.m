@@ -7,13 +7,21 @@
 //
 
 #import "PreferenceTableViewController.h"
+#import "AppDelegate.h"
+#import "Traveler.h"
 
 @interface PreferenceTableViewController ()
 
 @end
 
 @implementation PreferenceTableViewController
+{
+    NSManagedObjectContext *managedContextObject;
+    CGRect backToOriginal;
+    UIView *popup;
+    Traveler *me;
 
+}
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -25,13 +33,10 @@
 
 - (void)viewDidLoad
 {
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    managedContextObject = appDelegate.managedObjectContext;
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,6 +55,46 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 4;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+    if (indexPath.row == 0)
+    {
+        
+    }
+    else if (indexPath.row == 1)
+    {
+        
+    }
+    else if (indexPath.row == 2)
+    {
+    }
+}
+
+-(void) CreateSlideOut
+{
+    
+    CGRect frame=CGRectMake(0, CGRectGetMaxY(self.view.bounds), 320, 300);
+    backToOriginal=frame;
+    popup=[[UIView alloc]initWithFrame:frame];
+    popup.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:popup];
+    
+}
+
+-(void) removePopUp
+
+{
+    [UIView beginAnimations:nil context:nil];
+    [popup setFrame:backToOriginal];
+    [UIView commitAnimations];
+}
+
+-(IBAction) CancelClicked : (id) sender
+{
+    [self removePopUp];
 }
 
 /*
