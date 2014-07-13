@@ -1,44 +1,34 @@
 //
-//  PreferenceTableViewController.m
+//  GenderTableViewController.m
 //  fun4
 //
-//  Created by Ni Yan on 7/12/14.
+//  Created by Ni Yan on 7/13/14.
 //  Copyright (c) 2014 Ni Yan. All rights reserved.
 //
 
-#import "PreferenceTableViewController.h"
-#import "AppDelegate.h"
-#import "Traveler.h"
+#import "GenderTableViewController.h"
 
-@interface PreferenceTableViewController ()
+@interface GenderTableViewController ()
 
 @end
 
-@implementation PreferenceTableViewController
+@implementation GenderTableViewController
 {
-    NSManagedObjectContext *managedContextObject;
-    CGRect backToOriginal;
-    UIView *popup;
-    Traveler *me;
-
+    NSArray *genderList;
 
 }
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
     }
-
     return self;
 }
 
 - (void)viewDidLoad
 {
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    managedContextObject = appDelegate.managedObjectContext;
+    genderList = [[NSArray alloc] initWithObjects:@"Mail", @"Female", @"Doesn't Matter", nil];
     [super viewDidLoad];
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,55 +46,33 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return genderList.count;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
-    if (indexPath.row == 0)
-    {
-        
-    }
-    else if (indexPath.row == 1)
-    {
-        
-    }
-    else if (indexPath.row == 2)
-    {
-    }
-}
-
--(void) CreateSlideOut
-{
+    static NSString *CellIdentifier = @"Cell";
     
-    CGRect frame=CGRectMake(0, CGRectGetMaxY(self.view.bounds), 320, 300);
-    backToOriginal=frame;
-    popup=[[UIView alloc]initWithFrame:frame];
-    popup.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:popup];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
     
+    cell.textLabel.text = [genderList objectAtIndex:indexPath.row];
+    
+    return cell;
 }
 
--(void) removePopUp
-
+/*
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [UIView beginAnimations:nil context:nil];
-    [popup setFrame:backToOriginal];
-    [UIView commitAnimations];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    
+    // Configure the cell...
+    
+    return cell;
 }
-
--(IBAction) CancelClicked : (id) sender
-{
-    [self removePopUp];
-}
-
-- (void)dealloc {
-}
-
-
-
-
+*/
 
 /*
 // Override to support conditional editing of the table view.
