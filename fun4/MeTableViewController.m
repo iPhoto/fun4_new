@@ -276,7 +276,7 @@
         
     }
     [self saveMeToCoreData];
-    [self saveMeToServer];
+    [self saveMyPictureToServer];
 
 }
 
@@ -302,10 +302,7 @@
     _name.text = me.name;
   
     //save to parse
-    PFObject *meAtServer = [PFObject objectWithClassName:@"Traveler"];
-    meAtServer[@"name"] = me.name;
-    
-    [meAtServer saveEventually];
+    [self saveMeToServer];
     
     
 }
@@ -332,10 +329,7 @@
     _phone.text = me.phoneNumber;
 
     //save to parse
-    PFObject *meAtServer = [PFObject objectWithClassName:@"Traveler"];
-    meAtServer[@"phoneNumber"] = me.phoneNumber;
-    
-    [meAtServer saveEventually];
+    [self saveMeToServer];
     
 
 }
@@ -354,6 +348,32 @@
 }
 
 - (void) saveMeToServer
+{
+    PFObject *meAtServer;
+    PFQuery *query = [PFQuery queryWithClassName:@"Traveler"];
+    [query whereKey:@"objectId" equalTo:me.idAtServer];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            if ([objects count] > 0)
+            {
+                meAtServer = [objects indexOfObject:0];
+                
+            }
+            else
+            {
+            }
+            meAtServer[@"name"] = me.name;
+            meAtServer[@"phoneNumber"] = me.phoneNumber;
+            [meAtServer saveEventually];
+
+        } else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+
+}
+
+- (void) saveMyPictureToServer
 {
     NSData* data = UIImageJPEGRepresentation(_profilePhoto.image, 1);
     PFFile *imageFile = [PFFile fileWithName:@"me.jpg" data:data];
