@@ -115,10 +115,6 @@
     
 }
 
-- (NSInteger) coTravelerGender
-{
-    return genderSelection;
-}
 
 - (void) saveCoTravelerGender:(NSInteger) gender
 {
@@ -140,11 +136,11 @@
     
     [self saveMeToCoreData];
         
-//    //save to parse
-//    PFObject *meAtServer = [PFObject objectWithClassName:@"Traveler"];
-//    meAtServer[@"name"] = me.name;
-//    
-//    [meAtServer saveEventually];
+    //save to parse
+    PFObject *meAtServer = [PFObject objectWithClassName:@"Traveler"];
+    meAtServer[@"coTravelerGender"] = me.coTravelerGender;
+    
+    [meAtServer saveEventually];
     
 }
 

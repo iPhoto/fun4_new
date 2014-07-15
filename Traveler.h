@@ -16,5 +16,6 @@
 @property (nonatomic, retain) NSString * phoneNumber;
 @property (nonatomic, retain) id picture;
 @property (nonatomic, retain) NSNumber * coTravelerGender;
+@property (nonatomic, retain) NSString * idAtServer;
 
 @end

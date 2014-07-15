@@ -15,5 +15,6 @@
 @dynamic phoneNumber;
 @dynamic picture;
 @dynamic coTravelerGender;
+@dynamic idAtServer;
 
 @end
