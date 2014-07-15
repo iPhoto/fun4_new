@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13E28" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Traveler" representedClassName="Traveler" syncable="YES">
+        <attribute name="coTravelerGender" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="picture" optional="YES" attributeType="Transformable" valueTransformerName="MeTableViewController" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
     </entity>
+    <entity name="TravelerLodgingPreference" representedClassName="TravelerLodgingPreference" syncable="YES">
+        <attribute name="lodgingType" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Traveler" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="Traveler" positionX="-702" positionY="-1548" width="128" height="103"/>
+        <element name="TravelerLodgingPreference" positionX="-675" positionY="-1503" width="128" height="58"/>
     </elements>
 </model>

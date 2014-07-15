@@ -2,7 +2,7 @@
 //  Traveler.m
 //  fun4
 //
-//  Created by Ni Yan on 5/26/14.
+//  Created by Ni Yan on 7/14/14.
 //  Copyright (c) 2014 Ni Yan. All rights reserved.
 //
 
@@ -14,5 +14,6 @@
 @dynamic name;
 @dynamic phoneNumber;
 @dynamic picture;
+@dynamic coTravelerGender;
 
 @end

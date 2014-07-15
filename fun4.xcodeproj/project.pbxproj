@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		BC47FEF61932BFFE00725384 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC47FEF51932BFFE00725384 /* CoreData.framework */; };
 		BC47FEFA1932C06600725384 /* fun4.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC47FEF81932C06600725384 /* fun4.xcdatamodeld */; };
-		BC47FF031934121A00725384 /* Traveler.m in Sources */ = {isa = PBXBuildFile; fileRef = BC47FF021934121A00725384 /* Traveler.m */; };
 		BC783A2C18F4D0D200BC26EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC783A2B18F4D0D200BC26EB /* Foundation.framework */; };
 		BC783A2E18F4D0D200BC26EB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC783A2D18F4D0D200BC26EB /* CoreGraphics.framework */; };
 		BC783A3018F4D0D200BC26EB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC783A2F18F4D0D200BC26EB /* UIKit.framework */; };
@@ -33,6 +32,8 @@
 		BC91AAF51909ECD2004B2135 /* Attraction.m in Sources */ = {isa = PBXBuildFile; fileRef = BC91AAF41909ECD2004B2135 /* Attraction.m */; };
 		BC921EBC1971D700009A4488 /* PreferenceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC921EBB1971D700009A4488 /* PreferenceTableViewController.m */; };
 		BC921EBF1972EFE8009A4488 /* GenderTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC921EBE1972EFE8009A4488 /* GenderTableViewController.m */; };
+		BC921EC31974AFC6009A4488 /* Traveler.m in Sources */ = {isa = PBXBuildFile; fileRef = BC921EC21974AFC6009A4488 /* Traveler.m */; };
+		BC921EC61974AFC7009A4488 /* TravelerLodgingPreference.m in Sources */ = {isa = PBXBuildFile; fileRef = BC921EC51974AFC7009A4488 /* TravelerLodgingPreference.m */; };
 		BC94924D190F2D4500EC956D /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BC949249190F2D4500EC956D /* AcousticModelEnglish.bundle */; };
 		BC94924E190F2D4500EC956D /* AcousticModelSpanish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BC94924A190F2D4500EC956D /* AcousticModelSpanish.bundle */; };
 		BC94924F190F2D4500EC956D /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC94924B190F2D4500EC956D /* OpenEars.framework */; };
@@ -65,8 +66,6 @@
 /* Begin PBXFileReference section */
 		BC47FEF51932BFFE00725384 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		BC47FEF91932C06600725384 /* fun4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = fun4.xcdatamodel; sourceTree = "<group>"; };
-		BC47FF011934121A00725384 /* Traveler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Traveler.h; sourceTree = "<group>"; };
-		BC47FF021934121A00725384 /* Traveler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Traveler.m; sourceTree = "<group>"; };
 		BC783A2818F4D0D200BC26EB /* fun4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fun4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC783A2B18F4D0D200BC26EB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BC783A2D18F4D0D200BC26EB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -105,6 +104,10 @@
 		BC921EBD1972EFE8009A4488 /* GenderTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenderTableViewController.h; sourceTree = "<group>"; };
 		BC921EBE1972EFE8009A4488 /* GenderTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenderTableViewController.m; sourceTree = "<group>"; };
 		BC921EC019730055009A4488 /* coTravelerGenderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = coTravelerGenderProtocol.h; sourceTree = "<group>"; };
+		BC921EC11974AFC6009A4488 /* Traveler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Traveler.h; sourceTree = "<group>"; };
+		BC921EC21974AFC6009A4488 /* Traveler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Traveler.m; sourceTree = "<group>"; };
+		BC921EC41974AFC7009A4488 /* TravelerLodgingPreference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravelerLodgingPreference.h; sourceTree = "<group>"; };
+		BC921EC51974AFC7009A4488 /* TravelerLodgingPreference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravelerLodgingPreference.m; sourceTree = "<group>"; };
 		BC949249190F2D4500EC956D /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
 		BC94924A190F2D4500EC956D /* AcousticModelSpanish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelSpanish.bundle; sourceTree = "<group>"; };
 		BC94924B190F2D4500EC956D /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
@@ -170,8 +173,10 @@
 			isa = PBXGroup;
 			children = (
 				BC47FEF81932C06600725384 /* fun4.xcdatamodeld */,
-				BC47FF011934121A00725384 /* Traveler.h */,
-				BC47FF021934121A00725384 /* Traveler.m */,
+				BC921EC11974AFC6009A4488 /* Traveler.h */,
+				BC921EC21974AFC6009A4488 /* Traveler.m */,
+				BC921EC41974AFC7009A4488 /* TravelerLodgingPreference.h */,
+				BC921EC51974AFC7009A4488 /* TravelerLodgingPreference.m */,
 			);
 			name = Data;
 			path = ..;
@@ -433,10 +438,11 @@
 				BC783A4218F4D0D200BC26EB /* ViewController.m in Sources */,
 				BC8E8F2E18FAEC20008D8C51 /* AttractionsTableViewController.m in Sources */,
 				BC91AAF01909DA1B004B2135 /* AttractionDetailViewController.m in Sources */,
+				BC921EC31974AFC6009A4488 /* Traveler.m in Sources */,
 				BC8E8F3A18FB1F42008D8C51 /* SearchViewController.m in Sources */,
 				BC783A3C18F4D0D200BC26EB /* AppDelegate.m in Sources */,
 				BC921EBF1972EFE8009A4488 /* GenderTableViewController.m in Sources */,
-				BC47FF031934121A00725384 /* Traveler.m in Sources */,
+				BC921EC61974AFC7009A4488 /* TravelerLodgingPreference.m in Sources */,
 				BC783A3818F4D0D200BC26EB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

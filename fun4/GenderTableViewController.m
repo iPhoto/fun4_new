@@ -9,6 +9,8 @@
 #import "GenderTableViewController.h"
 #import "coTravelerGenderProtocol.h"
 #import "PreferenceTableViewController.h"
+#import "AppDelegate.h"
+#import "Traveler.h"
 
 @interface GenderTableViewController ()
     @property (nonatomic) int coTravelerGender;
@@ -18,7 +20,9 @@
 @implementation GenderTableViewController
 {
     NSArray *genderList;
-    int genderSelection;
+    NSInteger genderSelection;
+    NSManagedObjectContext *managedContextObject;
+    Traveler *me;
 
 }
 - (id)initWithStyle:(UITableViewStyle)style
@@ -31,8 +35,12 @@
 
 - (void)viewDidLoad
 {
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    managedContextObject = appDelegate.managedObjectContext;
+    [self loadMe];
+    
     genderList = [[NSArray alloc] initWithObjects:@"Male", @"Female", @"Doesn't Matter", nil];
-    genderSelection = -1;
+    genderSelection = me.coTravelerGender.intValue;
     
     [super viewDidLoad];
 }
@@ -79,7 +87,32 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     genderSelection = indexPath.row;
     [tableView reloadData];
+    [self saveCoTravelerGender:genderSelection];
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)loadMe
+{
+    NSError *error = nil;
+    NSFetchRequest *fetchRequest;
+    NSArray * arrayOfTravelers;
+    
+    
+    fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Traveler"];
+    
+    arrayOfTravelers = [managedContextObject executeFetchRequest:fetchRequest
+                                                           error:&error];
+    if ([arrayOfTravelers count] > 0)
+    {
+        me = [arrayOfTravelers objectAtIndex:0];
+        
+    }
+    
+    if (error != nil) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
 }
 
 - (NSInteger) coTravelerGender
@@ -87,6 +120,46 @@
     return genderSelection;
 }
 
+- (void) saveCoTravelerGender:(NSInteger) gender
+{
+    [self loadMe];
+    if (me == nil)
+    {
+        //insert me in core data
+        me = [NSEntityDescription insertNewObjectForEntityForName:@"Traveler" inManagedObjectContext:managedContextObject];
+        
+        me.coTravelerGender = [NSNumber numberWithInt:gender];
+        
+    }
+    else
+    {
+        //update me in core data
+        [me setValue: [NSNumber numberWithInt:gender] forKey:@"coTravelerGender"];
+
+    }
+    
+    [self saveMeToCoreData];
+        
+//    //save to parse
+//    PFObject *meAtServer = [PFObject objectWithClassName:@"Traveler"];
+//    meAtServer[@"name"] = me.name;
+//    
+//    [meAtServer saveEventually];
+    
+}
+
+- (void) saveMeToCoreData
+{
+    NSError *error = nil;
+    if ([managedContextObject save:&error])
+    {
+        NSLog(@"save successfully");
+    }
+    else
+    {
+        NSLog(@"fail to save");
+    }
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
