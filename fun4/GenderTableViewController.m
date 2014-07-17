@@ -39,7 +39,7 @@
     managedContextObject = appDelegate.managedObjectContext;
     [self loadMe];
     
-    genderList = [[NSArray alloc] initWithObjects:@"Male", @"Female", @"Doesn't Matter", nil];
+    genderList = [[NSArray alloc] initWithObjects:@"Gal(s)", @"Guy(s)", @"Doesn't Matter", nil];
     genderSelection = me.coTravelerGender.intValue;
     
     [super viewDidLoad];
