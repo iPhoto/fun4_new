@@ -136,12 +136,7 @@
     
     [self saveMeToCoreData];
         
-    //save to parse
-    PFObject *meAtServer = [PFObject objectWithClassName:@"Traveler"];
-    meAtServer[@"coTravelerGender"] = me.coTravelerGender;
-    
-    [meAtServer saveEventually];
-    
+    [self saveMeToServer];
 }
 
 - (void) saveMeToCoreData
@@ -155,6 +150,49 @@
     {
         NSLog(@"fail to save");
     }
+}
+
+- (void) saveMeToServer
+{
+    __block PFObject *meAtServer = [PFObject objectWithClassName:@"Traveler"];
+    if (me.phoneNumber == nil)
+    {
+        meAtServer[@"coTravelerGender"] = me.coTravelerGender;
+        [meAtServer saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                NSLog(@"Saved to server.");
+            } else {
+                NSLog(@"%@", error);
+            }
+        }];
+    }
+    else
+    {
+        
+        PFQuery *query = [PFQuery queryWithClassName:@"Traveler"];
+        [query whereKey:@"phoneNumber" equalTo:me.phoneNumber];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                if ([objects count] > 0)
+                {
+                    meAtServer = [objects objectAtIndex:0];
+                    
+                }
+                meAtServer[@"coTravelerGender"] = me.coTravelerGender;
+                [meAtServer saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    if (succeeded) {
+                        NSLog(@"Saved to server.");
+                    } else {
+                        NSLog(@"%@", error);
+                    }
+                }];
+            }
+            else {
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
+            }
+        }];
+    }
+    
 }
 /*
 // Override to support conditional editing of the table view.
