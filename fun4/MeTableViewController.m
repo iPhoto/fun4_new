@@ -349,27 +349,46 @@
 
 - (void) saveMeToServer
 {
-    PFObject *meAtServer;
-    PFQuery *query = [PFQuery queryWithClassName:@"Traveler"];
-    [query whereKey:@"objectId" equalTo:me.idAtServer];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            if ([objects count] > 0)
-            {
-                meAtServer = [objects indexOfObject:0];
-                
+    __block PFObject *meAtServer = [PFObject objectWithClassName:@"Traveler"];
+    if (me.phoneNumber == nil)
+    {
+        meAtServer[@"name"] = (me.name == nil ? [NSString stringWithFormat:@""] : me.name);
+        meAtServer[@"phoneNumber"] = (me.phoneNumber == nil ? [NSString stringWithFormat:@""] : me.phoneNumber);
+        [meAtServer saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                NSLog(@"Saved to server.");
+            } else {
+                NSLog(@"%@", error);
             }
-            else
-            {
-            }
-            meAtServer[@"name"] = me.name;
-            meAtServer[@"phoneNumber"] = me.phoneNumber;
-            [meAtServer saveEventually];
+        }];
+    }
+    else
+    {
 
-        } else {
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
+        PFQuery *query = [PFQuery queryWithClassName:@"Traveler"];
+        [query whereKey:@"phoneNumber" equalTo:me.phoneNumber];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                if ([objects count] > 0)
+                {
+                    meAtServer = [objects objectAtIndex:0];
+                    
+                }
+                meAtServer[@"name"] = (me.name == nil ? [NSString stringWithFormat:@""] : me.name);
+                meAtServer[@"phoneNumber"] = (me.phoneNumber == nil ? [NSString stringWithFormat:@""] : me.phoneNumber);
+                [meAtServer saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    if (succeeded) {
+                        NSLog(@"Saved to server.");
+                    } else {
+                        NSLog(@"%@", error);
+                    }
+                }];
+             }
+            else {
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
+            }
+        }];
+    }
 
 }
 

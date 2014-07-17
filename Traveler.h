@@ -2,7 +2,7 @@
 //  Traveler.h
 //  fun4
 //
-//  Created by Ni Yan on 7/14/14.
+//  Created by Ni Yan on 7/16/14.
 //  Copyright (c) 2014 Ni Yan. All rights reserved.
 //
 
@@ -16,6 +16,6 @@
 @property (nonatomic, retain) NSString * phoneNumber;
 @property (nonatomic, retain) id picture;
 @property (nonatomic, retain) NSNumber * coTravelerGender;
-@property (nonatomic, retain) NSString * idAtServer;
+@property (nonatomic, retain) NSNumber * gender;
 
 @end
