@@ -7,31 +7,40 @@
 //
 
 #import "MeGenderTableViewController.h"
+#import "PreferenceTableViewController.h"
+#import "AppDelegate.h"
+#import "Traveler.h"
 
 @interface MeGenderTableViewController ()
 
 @end
 
 @implementation MeGenderTableViewController
+{
+    NSArray *genderList;
+    NSInteger genderSelection;
+    NSManagedObjectContext *managedContextObject;
+    Traveler *me;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
 
 - (void)viewDidLoad
 {
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    managedContextObject = appDelegate.managedObjectContext;
+    [self loadMe];
+    
+    genderList = [[NSArray alloc] initWithObjects:@"Gal", @"Guy", @"Doesn't Matter", nil];
+    genderSelection = me.gender.intValue;
+    
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,81 +48,146 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-#pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return genderList.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"Cell";
     
-    // Configure the cell...
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    cell.textLabel.text = [genderList objectAtIndex:indexPath.row];
+    cell.accessoryType = UITableViewCellAccessoryNone; // reset the cell accessory to none
+    
+    if (indexPath.row == genderSelection)
+    {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
     
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    genderSelection = indexPath.row;
+    [tableView reloadData];
+    [self saveMyGender:genderSelection];
+    [self.navigationController popViewControllerAnimated:YES];
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)loadMe
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    NSError *error = nil;
+    NSFetchRequest *fetchRequest;
+    NSArray * arrayOfTravelers;
+    
+    
+    fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Traveler"];
+    
+    arrayOfTravelers = [managedContextObject executeFetchRequest:fetchRequest
+                                                           error:&error];
+    if ([arrayOfTravelers count] > 0)
+    {
+        me = [arrayOfTravelers objectAtIndex:0];
+        
+    }
+    
+    if (error != nil) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+
+- (void) saveMyGender:(NSInteger) gender
 {
+    [self loadMe];
+    if (me == nil)
+    {
+        //insert me in core data
+        me = [NSEntityDescription insertNewObjectForEntityForName:@"Traveler" inManagedObjectContext:managedContextObject];
+        
+        me.gender = [NSNumber numberWithInt:gender];
+        
+    }
+    else
+    {
+        //update me in core data
+        [me setValue: [NSNumber numberWithInt:gender] forKey:@"gender"];
+        
+    }
+    
+    [self saveMeToCoreData];
+    
+    [self saveMeToServer];
 }
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+- (void) saveMeToCoreData
 {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+    NSError *error = nil;
+    if ([managedContextObject save:&error])
+    {
+        NSLog(@"save successfully");
+    }
+    else
+    {
+        NSLog(@"fail to save");
+    }
 }
-*/
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void) saveMeToServer
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    __block PFObject *meAtServer = [PFObject objectWithClassName:@"Traveler"];
+    if (me.phoneNumber == nil)
+    {
+        meAtServer[@"gender"] = me.gender;
+        [meAtServer saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                NSLog(@"Saved to server.");
+            } else {
+                NSLog(@"%@", error);
+            }
+        }];
+    }
+    else
+    {
+        
+        PFQuery *query = [PFQuery queryWithClassName:@"Traveler"];
+        [query whereKey:@"phoneNumber" equalTo:me.phoneNumber];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                if ([objects count] > 0)
+                {
+                    meAtServer = [objects objectAtIndex:0];
+                    
+                }
+                meAtServer[@"gender"] = me.gender;
+                [meAtServer saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    if (succeeded) {
+                        NSLog(@"Saved to server.");
+                    } else {
+                        NSLog(@"%@", error);
+                    }
+                }];
+            }
+            else {
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
+            }
+        }];
+    }
+    
 }
-*/
 
 @end
