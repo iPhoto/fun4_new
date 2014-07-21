@@ -73,7 +73,7 @@
     //get small photos
     NSArray *photoReferences = [[_detail valueForKey:@"photos"] valueForKey:@"photo_reference"];
     
-    for (int i = 0; i < [photoReferences count]; i++)
+    for (int i = 0; i < 7; i++)
     {
 
         NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=%@&sensor=true&key=AIzaSyCIOBPZBItp_P4pJmvNb_nevarJQRQT0CY", [photoReferences objectAtIndex:i]]]];
@@ -98,7 +98,7 @@
     for (int i = 0; i < [reviews count]; i++)
     {
         
-        UITextView *textView=[[UITextView alloc] initWithFrame:CGRectMake(2.5, 260 + i * 40, 300, 200)];
+        UITextView *textView=[[UITextView alloc] initWithFrame:CGRectMake(5, 320 + i * 80, 300, 200)];
         textView.text = [reviews objectAtIndex: i];
         
         [self.view addSubview:textView];

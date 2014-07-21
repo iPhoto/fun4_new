@@ -255,8 +255,18 @@
 
 - (void)imagePickerController:(UIImagePickerController *) Picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
+    UIImage *initialImage = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    NSData *data = UIImagePNGRepresentation(initialImage);
     
-    _profilePhoto.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    UIImage *tempImage = [UIImage imageWithData:data];
+    UIImage *fixedOrientationImage = [UIImage imageWithCGImage:tempImage.CGImage
+                                                         scale:initialImage.scale
+                                                   orientation:initialImage.imageOrientation];
+    initialImage = fixedOrientationImage;
+    
+    _profilePhoto.image = initialImage;
+    
+    
     [[Picker presentingViewController] dismissViewControllerAnimated:YES completion:nil];
 
     [self loadMe];
