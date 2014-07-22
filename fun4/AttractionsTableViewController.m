@@ -65,7 +65,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 45; //height of the cell
+    return 65; //height of the cell
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -80,11 +80,17 @@
 //    if (result == 1) //google
 //    {
    
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"attractionCell" forIndexPath:indexPath];
-        
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"attractionCell"];
+    
+        if (cell == nil) {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"attractionCell" forIndexPath:indexPath];
+        }
+        [cell setNeedsUpdateConstraints];
+        [cell updateConstraintsIfNeeded];
+    
         UILabel *textView = [[UILabel alloc] initWithFrame:CGRectMake(65, 0, 245, 45)];
         textView.text = [[_results objectAtIndex:indexPath.row] valueForKey:@"name"];
-        textView.numberOfLines = 2;
+        textView.numberOfLines = 3;
         textView.autoresizesSubviews = YES;
         
         
@@ -94,7 +100,7 @@
         NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=%@&sensor=true&key=AIzaSyCIOBPZBItp_P4pJmvNb_nevarJQRQT0CY", attractionPhotoId]]];
         
         
-        UIImageView *imageView=[[UIImageView alloc] initWithFrame:CGRectMake(2.5, 2.5, 40, 40)];
+        UIImageView *imageView=[[UIImageView alloc] initWithFrame:CGRectMake(5, 5, 50, 50)];
         imageView.backgroundColor=[UIColor clearColor];
         [imageView.layer setCornerRadius:8.0f];
         [imageView.layer setMasksToBounds:YES];

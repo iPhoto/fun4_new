@@ -54,17 +54,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="San Francisco" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zFw-9P-9wy">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="San Francisco" borderStyle="roundedRect" minimumFontSize="22" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zFw-9P-9wy">
                                 <rect key="frame" x="39" y="228" width="242" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="9Og-6P-Uak"/>
+                                    <constraint firstAttribute="height" constant="50" id="Ley-Nf-qzI"/>
+                                    <constraint firstAttribute="width" constant="242" id="zF5-a2-9os"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="go"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.97131614963503654" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zFw-9P-9wy" firstAttribute="top" secondItem="oej-X0-ZGh" secondAttribute="bottom" constant="100" id="yYC-3L-Dw7"/>
+                            <constraint firstAttribute="centerX" secondItem="zFw-9P-9wy" secondAttribute="centerX" id="zLW-7r-7mZ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Destination" id="tA5-gQ-raz"/>
                     <connections>
