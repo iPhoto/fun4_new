@@ -79,36 +79,34 @@
 //    
 //    if (result == 1) //google
 //    {
-   
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"attractionCell"];
+        static NSString *CellIdentifier = @"Cell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-        if (cell == nil) {
-            cell = [tableView dequeueReusableCellWithIdentifier:@"attractionCell" forIndexPath:indexPath];
-        }
-        [cell setNeedsUpdateConstraints];
-        [cell updateConstraintsIfNeeded];
-    
-        UILabel *textView = [[UILabel alloc] initWithFrame:CGRectMake(65, 0, 245, 45)];
-        textView.text = [[_results objectAtIndex:indexPath.row] valueForKey:@"name"];
-        textView.numberOfLines = 3;
-        textView.autoresizesSubviews = YES;
-        
-        
-        NSString *attractionPhotoId = [[[[_results objectAtIndex:indexPath.row] valueForKey:@"photos"] objectAtIndex:0] valueForKey:@"photo_reference"];
+        if (cell == nil) {        
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+            
+            UILabel *textView = [[UILabel alloc] initWithFrame:CGRectMake(65, 0, 245, 45)];
+            textView.text = [[_results objectAtIndex:indexPath.row] valueForKey:@"name"];
+            textView.numberOfLines = 3;
+            textView.autoresizesSubviews = YES;
+            
+            
+            NSString *attractionPhotoId = [[[[_results objectAtIndex:indexPath.row] valueForKey:@"photos"] objectAtIndex:0] valueForKey:@"photo_reference"];
 
-        
-        NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=%@&sensor=true&key=AIzaSyCIOBPZBItp_P4pJmvNb_nevarJQRQT0CY", attractionPhotoId]]];
-        
-        
-        UIImageView *imageView=[[UIImageView alloc] initWithFrame:CGRectMake(5, 5, 50, 50)];
-        imageView.backgroundColor=[UIColor clearColor];
-        [imageView.layer setCornerRadius:8.0f];
-        [imageView.layer setMasksToBounds:YES];
-        [imageView setImage:[UIImage imageWithData: imageData]];
-        
-        [cell.contentView addSubview:imageView];
-        [cell.contentView addSubview:textView];
-        
+            
+            NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=%@&sensor=true&key=AIzaSyCIOBPZBItp_P4pJmvNb_nevarJQRQT0CY", attractionPhotoId]]];
+            
+            
+            UIImageView *imageView=[[UIImageView alloc] initWithFrame:CGRectMake(5, 5, 50, 50)];
+            imageView.backgroundColor=[UIColor clearColor];
+            [imageView.layer setCornerRadius:8.0f];
+            [imageView.layer setMasksToBounds:YES];
+            [imageView setImage:[UIImage imageWithData: imageData]];
+            
+            [cell.contentView addSubview:imageView];
+            [cell.contentView addSubview:textView];
+        }
+    
         return cell;
 //    }
     

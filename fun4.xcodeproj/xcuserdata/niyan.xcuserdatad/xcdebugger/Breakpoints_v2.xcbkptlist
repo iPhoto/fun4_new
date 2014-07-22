@@ -152,11 +152,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "fun4/AttractionsTableViewController.m"
-            timestampString = "427685694.925678"
+            timestampString = "427766180.035722"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "303"
-            endingLineNumber = "303"
+            startingLineNumber = "301"
+            endingLineNumber = "301"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -168,7 +168,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "fun4/AttractionsTableViewController.m"
-            timestampString = "427685694.925678"
+            timestampString = "427766180.035722"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "292"
+            endingLineNumber = "292"
+            landmarkName = "-getAttractionsByGeoCode:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "fun4/AttractionsTableViewController.m"
+            timestampString = "427766180.035722"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "294"
@@ -184,27 +200,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "fun4/AttractionsTableViewController.m"
-            timestampString = "427685694.925678"
+            timestampString = "427766180.035722"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "296"
-            endingLineNumber = "296"
-            landmarkName = "-getAttractionsByGeoCode:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "fun4/AttractionsTableViewController.m"
-            timestampString = "427685694.925678"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "291"
-            endingLineNumber = "291"
+            startingLineNumber = "289"
+            endingLineNumber = "289"
             landmarkName = "-getAttractionsByGeoCode:"
             landmarkType = "5">
          </BreakpointContent>
@@ -408,11 +408,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "fun4/AttractionsTableViewController.m"
-            timestampString = "427685694.925678"
+            timestampString = "427766180.035722"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "-getAttractionsByDestination:"
             landmarkType = "5">
          </BreakpointContent>
@@ -424,11 +424,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "fun4/AttractionsTableViewController.m"
-            timestampString = "427685694.925678"
+            timestampString = "427766180.035722"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "224"
-            endingLineNumber = "224"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
             landmarkName = "-getAttractionsByGeoCode:"
             landmarkType = "5">
          </BreakpointContent>
@@ -440,11 +440,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "fun4/AttractionsTableViewController.m"
-            timestampString = "427685694.925678"
+            timestampString = "427766180.035722"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
             landmarkName = "-getAttractionsByGeoCode:"
             landmarkType = "5">
          </BreakpointContent>
@@ -456,23 +456,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "fun4/AttractionsTableViewController.m"
-            timestampString = "427685694.925678"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
-            landmarkName = "-getAttractionsByGeoCode:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "fun4/AttractionsTableViewController.m"
-            timestampString = "427685694.925678"
+            timestampString = "427766180.035722"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "219"
@@ -488,11 +472,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "fun4/AttractionsTableViewController.m"
-            timestampString = "427685694.925678"
+            timestampString = "427766180.035722"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "237"
-            endingLineNumber = "237"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
             landmarkName = "-getAttractionsByGeoCode:"
             landmarkType = "5">
          </BreakpointContent>
@@ -504,11 +488,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "fun4/AttractionsTableViewController.m"
-            timestampString = "427685694.925678"
+            timestampString = "427766180.035722"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
             landmarkName = "-getAttractionsByGeoCode:"
             landmarkType = "5">
          </BreakpointContent>
@@ -520,11 +504,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "fun4/AttractionsTableViewController.m"
-            timestampString = "427685694.925678"
+            timestampString = "427766180.035722"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "229"
-            endingLineNumber = "229"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
             landmarkName = "-getAttractionsByGeoCode:"
             landmarkType = "5">
          </BreakpointContent>
@@ -536,11 +520,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "fun4/AttractionsTableViewController.m"
-            timestampString = "427685694.925678"
+            timestampString = "427766180.035722"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "245"
-            endingLineNumber = "245"
+            startingLineNumber = "227"
+            endingLineNumber = "227"
             landmarkName = "-getAttractionsByGeoCode:"
             landmarkType = "5">
          </BreakpointContent>
@@ -552,11 +536,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "fun4/AttractionsTableViewController.m"
-            timestampString = "427685694.925678"
+            timestampString = "427766180.035722"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "270"
-            endingLineNumber = "270"
+            startingLineNumber = "243"
+            endingLineNumber = "243"
             landmarkName = "-getAttractionsByGeoCode:"
             landmarkType = "5">
          </BreakpointContent>
@@ -568,11 +552,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "fun4/AttractionsTableViewController.m"
-            timestampString = "427685694.925678"
+            timestampString = "427766180.035722"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "269"
-            endingLineNumber = "269"
+            startingLineNumber = "268"
+            endingLineNumber = "268"
             landmarkName = "-getAttractionsByGeoCode:"
             landmarkType = "5">
          </BreakpointContent>
@@ -584,11 +568,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "fun4/AttractionsTableViewController.m"
-            timestampString = "427685694.925678"
+            timestampString = "427766180.035722"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "267"
+            endingLineNumber = "267"
+            landmarkName = "-getAttractionsByGeoCode:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "fun4/AttractionsTableViewController.m"
+            timestampString = "427766180.035722"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1193,7 +1193,7 @@
                   symbolName = "__39-[MeTableViewController saveMeToServer]_block_invoke_2"
                   moduleName = "fun4"
                   urlString = "file:///P/fun4_new/fun4/MeTableViewController.m"
-                  timestampString = "427685241.653917"
+                  timestampString = "427766180.170955"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "389"
@@ -1207,7 +1207,7 @@
                   symbolName = "__39-[MeTableViewController saveMeToServer]_block_invoke_3"
                   moduleName = "fun4"
                   urlString = "file:///P/fun4_new/fun4/MeTableViewController.m"
-                  timestampString = "427685241.654165"
+                  timestampString = "427766180.171427"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "389"
@@ -1402,6 +1402,22 @@
             startingLineNumber = "116"
             endingLineNumber = "116"
             landmarkName = "-saveMyGender:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "fun4/AttractionsTableViewController.m"
+            timestampString = "427766083.801629"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
