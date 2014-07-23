@@ -106,7 +106,9 @@
             [cell.contentView addSubview:imageView];
             [cell.contentView addSubview:textView];
         }
-    
+        else{
+        
+        }
         return cell;
 //    }
     
@@ -301,6 +303,8 @@
     _tappedAttraction.attractionId = [[_results objectAtIndex:indexPath.row] valueForKey:@"reference"];
     _tappedAttraction.name = [[_results objectAtIndex:indexPath.row] valueForKey:@"name"];
     _tappedAttraction.mainImageReference = [[[[_results objectAtIndex:indexPath.row] valueForKey:@"photos"] objectAtIndex:0] valueForKey:@"photo_reference"];
+    
+    [self performSegueWithIdentifier:@"detailSegue" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
