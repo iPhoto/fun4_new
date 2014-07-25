@@ -1185,6 +1185,36 @@
             endingLineNumber = "390"
             landmarkName = "-saveMeToServer"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__39-[MeTableViewController saveMeToServer]_block_invoke_2"
+                  moduleName = "fun4"
+                  urlString = "file:///P/fun4_new/fun4/MeTableViewController.m"
+                  timestampString = "427943516.633095"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "390"
+                  endingLineNumber = "390"
+                  offsetFromSymbolStart = "948">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__39-[MeTableViewController saveMeToServer]_block_invoke_3"
+                  moduleName = "fun4"
+                  urlString = "file:///P/fun4_new/fun4/MeTableViewController.m"
+                  timestampString = "427943516.63347"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "390"
+                  endingLineNumber = "390"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
