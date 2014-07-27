@@ -218,7 +218,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nameTag" translatesAutoresizingMaskIntoConstraints="NO" id="EkP-h9-6td">
-                                                    <rect key="frame" x="14" y="10" width="41" height="32"/>
+                                                    <rect key="frame" x="12" y="7" width="43" height="45"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -252,17 +252,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="or" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfE-qh-0Fb">
-                                                    <rect key="frame" x="46" y="16" width="22" height="21"/>
+                                                    <rect key="frame" x="54" y="16" width="22" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="boy" translatesAutoresizingMaskIntoConstraints="NO" id="Oxc-yb-D66">
-                                                    <rect key="frame" x="6" y="7" width="40" height="38"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="boy" translatesAutoresizingMaskIntoConstraints="NO" id="Oxc-yb-D66">
+                                                    <rect key="frame" x="0.0" y="7" width="52" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="girl" translatesAutoresizingMaskIntoConstraints="NO" id="ctE-dI-2Qf">
-                                                    <rect key="frame" x="64" y="9" width="43" height="38"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="girl" translatesAutoresizingMaskIntoConstraints="NO" id="ctE-dI-2Qf">
+                                                    <rect key="frame" x="75" y="9" width="46" height="38"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -326,7 +326,7 @@
             </objects>
             <point key="canvasLocation" x="809" y="133"/>
         </scene>
-        <!--Preference Table View Controller - Share-->
+        <!--Preference Table View Controller - Travel Plan-->
         <scene sceneID="aHw-Di-LK7">
             <objects>
                 <tableViewController id="jjU-kO-fJz" customClass="PreferenceTableViewController" sceneMemberID="viewController">
@@ -412,7 +412,7 @@
                             <outlet property="delegate" destination="jjU-kO-fJz" id="N81-Hm-PKZ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Share" id="rZ9-g1-JfP"/>
+                    <navigationItem key="navigationItem" title="Travel Plan" id="rZ9-g1-JfP"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YTJ-sh-JcZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -445,7 +445,7 @@
         <image name="171-sun" width="28" height="28"/>
         <image name="boy" width="225" height="225"/>
         <image name="girl" width="225" height="225"/>
-        <image name="nameTag" width="1304" height="870"/>
+        <image name="nameTag" width="1600" height="1227"/>
         <image name="phone" width="600" height="600"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
