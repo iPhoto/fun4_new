@@ -188,86 +188,81 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
-                            <tableViewSection headerTitle="Profile" id="drp-Pc-zUI">
+                            <tableViewSection id="drp-Pc-zUI">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="photoCell" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="205" id="OWb-cn-UJy">
-                                        <rect key="frame" x="0.0" y="86" width="320" height="205"/>
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="photoCell" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="267" id="OWb-cn-UJy">
+                                        <rect key="frame" x="0.0" y="64" width="320" height="267"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OWb-cn-UJy" id="16d-mu-BkA">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="204"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="266"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Un-BG-nC7">
-                                                    <rect key="frame" x="6" y="0.0" width="188" height="199"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Un-BG-nC7">
+                                                    <rect key="frame" x="6" y="0.0" width="188" height="261"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="Ruv-On-Qpf">
-                                        <rect key="frame" x="0.0" y="291" width="320" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="53" id="Ruv-On-Qpf">
+                                        <rect key="frame" x="0.0" y="331" width="320" height="53"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ruv-On-Qpf" id="98y-X4-926">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="52"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEH-bS-oNV">
-                                                    <rect key="frame" x="13" y="11" width="46" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDy-8Z-OCS">
-                                                    <rect key="frame" x="95" y="11" width="123" height="21"/>
+                                                    <rect key="frame" x="79" y="7" width="203" height="32"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nameTag" translatesAutoresizingMaskIntoConstraints="NO" id="EkP-h9-6td">
+                                                    <rect key="frame" x="14" y="10" width="41" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="aaj-42-zrd">
-                                        <rect key="frame" x="0.0" y="335" width="320" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="53" id="aaj-42-zrd">
+                                        <rect key="frame" x="0.0" y="384" width="320" height="53"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aaj-42-zrd" id="Zmw-xK-luF">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="52"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMQ-0j-n2U">
-                                                    <rect key="frame" x="11" y="11" width="60" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbJ-jo-pl7">
-                                                    <rect key="frame" x="80" y="0.0" width="212" height="43"/>
+                                                    <rect key="frame" x="75" y="7" width="207" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="Zm6-nW-KFJ">
+                                                    <rect key="frame" x="13" y="6" width="35" height="39"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="hrD-Xj-Sh8">
-                                        <rect key="frame" x="0.0" y="379" width="320" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="53" id="hrD-Xj-Sh8">
+                                        <rect key="frame" x="0.0" y="437" width="320" height="53"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hrD-Xj-Sh8" id="yKL-SV-Ppq">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="52"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="or" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfE-qh-0Fb">
-                                                    <rect key="frame" x="45" y="8" width="22" height="21"/>
+                                                    <rect key="frame" x="46" y="16" width="22" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="boy" translatesAutoresizingMaskIntoConstraints="NO" id="Oxc-yb-D66">
-                                                    <rect key="frame" x="6" y="2" width="40" height="38"/>
+                                                    <rect key="frame" x="6" y="7" width="40" height="38"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="girl" translatesAutoresizingMaskIntoConstraints="NO" id="ctE-dI-2Qf">
-                                                    <rect key="frame" x="64" y="2" width="43" height="38"/>
+                                                    <rect key="frame" x="64" y="9" width="43" height="38"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -450,6 +445,8 @@
         <image name="171-sun" width="28" height="28"/>
         <image name="boy" width="225" height="225"/>
         <image name="girl" width="225" height="225"/>
+        <image name="nameTag" width="1304" height="870"/>
+        <image name="phone" width="600" height="600"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
