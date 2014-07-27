@@ -179,6 +179,8 @@
     backToOriginal=frame;
     popup=[[UIView alloc]initWithFrame:frame];
     popup.backgroundColor = [UIColor whiteColor];
+    [popup setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"treeWatermark.png"]]];
+
     [self.view addSubview:popup];
     
 }
