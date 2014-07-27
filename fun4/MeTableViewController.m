@@ -66,6 +66,7 @@
 
 }
 
+
 -(void)displayMe
 {
     if (me != nil)
@@ -73,7 +74,39 @@
         _name.text = me.name;
         _phone.text = me.phoneNumber;
         _profilePhoto.image = me.picture;
+        
+        [self resizePictureFrame];
+        
+        [self addBorderToPhoto];
     }
+}
+
+- (void)resizePictureFrame
+{
+    //resize image view to the photo size
+    CGSize imgSize = _profilePhoto.image.size;
+    
+    float ratio = _profilePhoto.frame.size.width/imgSize.width;
+    
+    float scaledHeight=imgSize.height*ratio;
+    
+    if(scaledHeight < _profilePhoto.frame.size.height)
+    {
+        _profilePhoto.frame = CGRectMake(
+                                         _profilePhoto.frame.origin.x,
+                                         _profilePhoto.frame.origin.y,
+                                         _profilePhoto.frame.size.width,
+                                         scaledHeight);
+    }
+    
+
+}
+
+-(void)addBorderToPhoto
+{
+    UIColor *borderColor = [UIColor colorWithRed:0.24 green:0.47 blue:0.85 alpha:1.0];
+    [_profilePhoto.layer setBorderColor:borderColor.CGColor];
+    [_profilePhoto.layer setBorderWidth:3.0];
 
 }
 
@@ -94,6 +127,19 @@
 {
     return 4;
 }
+
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    if (indexPath.row == 0)
+//    {
+//        return _profilePhoto.frame.size.height + 20;
+//    }
+//    else
+//    {
+//        return 53;
+//    }
+//}
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -446,6 +492,7 @@
     return [UIImage imageWithData:value];
 
 }
+
 
 //- (IBAction)deleteCoreData:(id)sender {
 //    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
