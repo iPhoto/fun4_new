@@ -187,25 +187,27 @@
 {
     
     UIButton *doneButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
-    doneButton.frame=CGRectMake(10, 10, 40, 40);
+    doneButton.frame=CGRectMake(20, 90, 40, 40);
     doneButton.backgroundColor=[UIColor clearColor];
     [doneButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [doneButton setTitle:@"Done" forState:UIControlStateNormal];
+    [doneButton setTitle:@"Save" forState:UIControlStateNormal];
     [doneButton addTarget:self action:@selector(NameDoneClicked:) forControlEvents:UIControlEventTouchUpInside];
 
     UIButton *cancelButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
-    cancelButton.frame=CGRectMake(220, 10, 80, 40);
+    cancelButton.frame=CGRectMake(240, 90, 80, 40);
     cancelButton.backgroundColor=[UIColor clearColor];
     [cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
     [cancelButton addTarget:self action:@selector(CancelClicked:) forControlEvents:UIControlEventTouchUpInside];
 
 
-    nameInput = [[UITextField alloc] initWithFrame:CGRectMake(20, 80, 280, 40)];
+    nameInput = [[UITextField alloc] initWithFrame:CGRectMake(20, 40, 280, 40)];
+
     nameInput.delegate=self;
     nameInput.autocorrectionType = UITextAutocorrectionTypeNo;
     [nameInput setBackgroundColor:[UIColor clearColor]];
-    [nameInput setBorderStyle:UITextBorderStyleRoundedRect];
+    [nameInput setBorderStyle:UITextBorderStyleLine];
+
     
     [popup addSubview:nameInput];
     [popup addSubview:doneButton];
@@ -218,6 +220,8 @@
     [popup setFrame:frame];
     
     [UIView commitAnimations];
+    
+    [nameInput becomeFirstResponder];
 }
 
 -(void) slidePhonePopup
