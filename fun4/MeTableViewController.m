@@ -230,25 +230,26 @@
 {
     
     UIButton *doneButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
-    doneButton.frame=CGRectMake(60, 190, 200, 40);
+    doneButton.frame=CGRectMake(20, 90, 40, 40);
     doneButton.backgroundColor=[UIColor clearColor];
     [doneButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [doneButton setTitle:@"Done" forState:UIControlStateNormal];
-    [doneButton addTarget:self action:@selector(PhoneDoneClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [doneButton setTitle:@"Save" forState:UIControlStateNormal];
+    [doneButton addTarget:self action:@selector(NameDoneClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *cancelButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
-    cancelButton.frame=CGRectMake(60, 300, 200, 40);
+    cancelButton.frame=CGRectMake(240, 90, 80, 40);
     cancelButton.backgroundColor=[UIColor clearColor];
     [cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
     [cancelButton addTarget:self action:@selector(CancelClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     
-    phoneInput = [[UITextField alloc] initWithFrame:CGRectMake(20, 28, 280, 40)];
+    phoneInput = [[UITextField alloc] initWithFrame:CGRectMake(20, 40, 280, 40)];
+    
     phoneInput.delegate=self;
     phoneInput.autocorrectionType = UITextAutocorrectionTypeNo;
     [phoneInput setBackgroundColor:[UIColor clearColor]];
-    [phoneInput setBorderStyle:UITextBorderStyleRoundedRect];
+    [phoneInput setBorderStyle:UITextBorderStyleLine];
     
     [popup addSubview:phoneInput];
     [popup addSubview:doneButton];
@@ -261,6 +262,8 @@
     [popup setFrame:frame];
     
     [UIView commitAnimations];
+    [phoneInput setKeyboardType:UIKeyboardTypePhonePad];
+    [phoneInput becomeFirstResponder];
 }
 
 
