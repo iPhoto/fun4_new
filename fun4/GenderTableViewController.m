@@ -39,7 +39,7 @@
     managedContextObject = appDelegate.managedObjectContext;
     [self loadMe];
     
-    genderList = [[NSArray alloc] initWithObjects:@"Gal(s)", @"Guy(s)", @"Doesn't Matter", nil];
+    //genderList = [[NSArray alloc] initWithObjects:@"Gal(s)", @"Guy(s)", @"Doesn't Matter", nil];
     genderSelection = me.coTravelerGender.intValue;
     
     [super viewDidLoad];
@@ -60,22 +60,24 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return genderList.count;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+//    static NSString *CellIdentifier = @"Cell";
+//    
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//    
+//    if (cell == nil) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+//    }
+//    
+//    cell.textLabel.text = [genderList objectAtIndex:indexPath.row];
+//    cell.accessoryType = UITableViewCellAccessoryNone; // reset the cell accessory to none
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    
-    cell.textLabel.text = [genderList objectAtIndex:indexPath.row];
-    cell.accessoryType = UITableViewCellAccessoryNone; // reset the cell accessory to none
-    
+    UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
+
     if (indexPath.row == genderSelection)
     {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
