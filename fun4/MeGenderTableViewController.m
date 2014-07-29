@@ -17,7 +17,7 @@
 
 @implementation MeGenderTableViewController
 {
-    NSArray *genderList;
+    //NSArray *genderList;
     NSInteger genderSelection;
     NSManagedObjectContext *managedContextObject;
     Traveler *me;
@@ -37,7 +37,7 @@
     managedContextObject = appDelegate.managedObjectContext;
     [self loadMe];
     
-    genderList = [[NSArray alloc] initWithObjects:@"Gal", @"Guy", @"Doesn't Matter", nil];
+    //genderList = [[NSArray alloc] initWithObjects:@"Guy", @"Gal", nil];
     genderSelection = me.gender.intValue;
     
     [super viewDidLoad];
@@ -55,22 +55,42 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return genderList.count;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+//    static NSString *CellIdentifier = @"Cell";
+//    
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//    if (cell == nil) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+//    }
+//
+//    UIImage *img;
+//    
+//    if ([[genderList objectAtIndex:indexPath.row]  isEqual: @"Guy"])
+//    {
+//        img = [UIImage imageNamed:@"boy.png"];
+//
+//    }
+//    else
+//    {
+//        img = [UIImage imageNamed:@"girl.png"];
+//    }
+//    
+//    CGSize itemSize = CGSizeMake(52, 40);
+//    UIGraphicsBeginImageContext(itemSize);
+//    CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
+//    [img drawInRect:imageRect];
+//    cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+//    
+//    cell.accessoryType = UITableViewCellAccessoryNone; // reset the cell accessory to none
     
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    
-    cell.textLabel.text = [genderList objectAtIndex:indexPath.row];
-    cell.accessoryType = UITableViewCellAccessoryNone; // reset the cell accessory to none
-    
+    UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
+
     if (indexPath.row == genderSelection)
     {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -78,6 +98,7 @@
     
     return cell;
 }
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     genderSelection = indexPath.row;
