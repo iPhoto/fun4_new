@@ -96,7 +96,7 @@
         {
             myPicture = [UIImage imageNamed:@"boy.png"];
         }
-        else if (me.gender == 1)
+        else if ([me.gender intValue] == 1)
         {
             myPicture = [UIImage imageNamed:@"girl.png"];
         }
