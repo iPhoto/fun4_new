@@ -10,6 +10,7 @@
 #import "PhotoPickerViewController.h"
 #import "AppDelegate.h"
 #import "Traveler.h"
+#import "UIImage+Scale.h"
 
 @interface MeTableViewController ()
 
@@ -21,6 +22,7 @@
     CGRect backToOriginal;
     UIView *popup;
     Traveler *me;
+    UIImageView *_profilePhoto;
 
 }
 
@@ -73,7 +75,7 @@
     {
         _name.text = me.name;
         _phone.text = me.phoneNumber;
-        _profilePhoto.image = me.picture;
+        [_profilePhoto setImage: me.picture];
         
         [self resizePictureFrame];
         
@@ -83,21 +85,33 @@
 
 - (void)resizePictureFrame
 {
-    //resize image view to the photo size
-    CGSize imgSize = _profilePhoto.image.size;
+ 
+    //UIImage *myPicture = [UIImage imageNamed:@"boy.png"];
     
-    float ratio = _profilePhoto.frame.size.width/imgSize.width;
+    UIImage *myPicture = me.picture;
     
-    float scaledHeight=imgSize.height*ratio;
-    
-    if(scaledHeight < _profilePhoto.frame.size.height)
+    if (myPicture == nil)
     {
-        _profilePhoto.frame = CGRectMake(
-                                         _profilePhoto.frame.origin.x,
-                                         _profilePhoto.frame.origin.y,
-                                         _profilePhoto.frame.size.width,
-                                         scaledHeight);
+        if (me.gender == 0)
+        {
+            myPicture = [UIImage imageNamed:@"boy.png"];
+        }
+        else if (me.gender == 1)
+        {
+            myPicture = [UIImage imageNamed:@"girl.png"];
+        }
     }
+    
+    float ratio = myPicture.size.width/myPicture.size.height;
+ 
+    _profilePhoto = [[UIImageView alloc]initWithImage:me.picture];
+    
+    _profilePhoto.frame = CGRectMake(10, 10, 170, 170 * ratio);
+
+    // Scale the image
+    //UIImage *scaledPicture = [myPicture scaleToSize:CGSizeMake(60.0f, 60.0f)];
+    
+    _profilePhoto.contentMode = UIViewContentModeScaleAspectFit;
     
 
 }
@@ -128,17 +142,29 @@
     return 4;
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    if (indexPath.row == 0)
-//    {
-//        return _profilePhoto.frame.size.height + 20;
-//    }
-//    else
-//    {
-//        return 53;
-//    }
-//}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
+    
+    if (indexPath.row == 0)
+    {
+        [cell addSubview:_profilePhoto];
+    }
+    
+    return cell;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0)
+    {
+        return _profilePhoto.frame.size.height + 20;
+    }
+    else
+    {
+        return 53;
+    }
+}
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

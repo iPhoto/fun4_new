@@ -42,6 +42,7 @@
 		BC949253190F2DB100EC956D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC949251190F2DB100EC956D /* AudioToolbox.framework */; };
 		BC949254190F2DB100EC956D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC949252190F2DB100EC956D /* AVFoundation.framework */; };
 		BC9492571911CF5800EC956D /* DynamicSpeechRecognition.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9492561911CF5800EC956D /* DynamicSpeechRecognition.m */; };
+		BCE2942A1989871200453736 /* UIImage+scale.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE294291989871200453736 /* UIImage+scale.m */; };
 		BCF256B9193E9DF3007DADC5 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF256B8193E9DF3007DADC5 /* Parse.framework */; };
 		BCF256BB193E9ECE007DADC5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF256BA193E9ECE007DADC5 /* CFNetwork.framework */; };
 		BCF256BD193E9EEF007DADC5 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF256BC193E9EEF007DADC5 /* libz.dylib */; };
@@ -119,6 +120,8 @@
 		BC949252190F2DB100EC956D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		BC9492551911CF5800EC956D /* DynamicSpeechRecognition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicSpeechRecognition.h; sourceTree = "<group>"; };
 		BC9492561911CF5800EC956D /* DynamicSpeechRecognition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicSpeechRecognition.m; sourceTree = "<group>"; };
+		BCE294281989871200453736 /* UIImage+scale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+scale.h"; sourceTree = "<group>"; };
+		BCE294291989871200453736 /* UIImage+scale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+scale.m"; sourceTree = "<group>"; };
 		BCF256B8193E9DF3007DADC5 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		BCF256BA193E9ECE007DADC5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		BCF256BC193E9EEF007DADC5 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -262,6 +265,8 @@
 				BC921EBE1972EFE8009A4488 /* GenderTableViewController.m */,
 				BC9492551911CF5800EC956D /* DynamicSpeechRecognition.h */,
 				BC9492561911CF5800EC956D /* DynamicSpeechRecognition.m */,
+				BCE294281989871200453736 /* UIImage+scale.h */,
+				BCE294291989871200453736 /* UIImage+scale.m */,
 				BC783A3218F4D0D200BC26EB /* Supporting Files */,
 			);
 			path = fun4;
@@ -433,6 +438,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCE2942A1989871200453736 /* UIImage+scale.m in Sources */,
 				BC921EBC1971D700009A4488 /* PreferenceTableViewController.m in Sources */,
 				BC9492571911CF5800EC956D /* DynamicSpeechRecognition.m in Sources */,
 				BC921EDB19775A97009A4488 /* MeGenderTableViewController.m in Sources */,
