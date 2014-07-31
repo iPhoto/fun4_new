@@ -44,6 +44,13 @@
     [super viewDidLoad];
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    [self resizePictureFrame];
+    [self addBorderToPhoto];
+    [self.tableView reloadData];
+    [super viewWillAppear:animated];
+}
+
 - (void)loadMe
 {
     NSError *error = nil;
@@ -76,11 +83,12 @@
         _name.text = me.name;
         _phone.text = me.phoneNumber;
         [_profilePhoto setImage: me.picture];
-        
-        [self resizePictureFrame];
-        
-        [self addBorderToPhoto];
     }
+    [self resizePictureFrame];
+    
+    [self addBorderToPhoto];
+
+    
 }
 
 - (void)resizePictureFrame
@@ -92,7 +100,11 @@
     
     if (myPicture == nil)
     {
-        if (me.gender == 0)
+        if (me == nil)
+        {
+            myPicture = [UIImage imageNamed:@"nogender.png"];
+        }
+        else if ([me.gender intValue] == 0)
         {
             myPicture = [UIImage imageNamed:@"boy.png"];
         }
@@ -100,11 +112,12 @@
         {
             myPicture = [UIImage imageNamed:@"girl.png"];
         }
+        
     }
     
     float ratio = myPicture.size.width/myPicture.size.height;
  
-    _profilePhoto = [[UIImageView alloc]initWithImage:me.picture];
+    _profilePhoto = [[UIImageView alloc]initWithImage:myPicture];
     
     _profilePhoto.frame = CGRectMake(10, 10, 170, 170 * ratio);
 
