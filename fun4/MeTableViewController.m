@@ -45,6 +45,7 @@
 }
 
 - (void) viewWillAppear:(BOOL)animated {
+    [self loadMe];
     [self resizePictureFrame];
     [self addBorderToPhoto];
     [self.tableView reloadData];
@@ -113,8 +114,11 @@
         
     }
     
-    float ratio = myPicture.size.width/myPicture.size.height;
- 
+    float ratio = myPicture.size.height/myPicture.size.width;
+    
+    _profilePhoto.image = nil;
+    _profilePhoto.frame = CGRectMake(10, 10, 0, 0);
+    
     _profilePhoto = [[UIImageView alloc]initWithImage:myPicture];
     
     _profilePhoto.frame = CGRectMake(10, 10, 170, 170 * ratio);
@@ -225,19 +229,20 @@
 -(void) slideNamePopup
 {
     
-    UIButton *doneButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
-    doneButton.frame=CGRectMake(20, 90, 40, 40);
-    doneButton.backgroundColor=[UIColor clearColor];
-    [doneButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [doneButton setTitle:@"Save" forState:UIControlStateNormal];
-    [doneButton addTarget:self action:@selector(NameDoneClicked:) forControlEvents:UIControlEventTouchUpInside];
-
+    
     UIButton *cancelButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
-    cancelButton.frame=CGRectMake(240, 90, 80, 40);
+    cancelButton.frame=CGRectMake(20, 90, 80, 40);
     cancelButton.backgroundColor=[UIColor clearColor];
     [cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
     [cancelButton addTarget:self action:@selector(CancelClicked:) forControlEvents:UIControlEventTouchUpInside];
+
+    UIButton *doneButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
+    doneButton.frame=CGRectMake(260, 90, 40, 40);
+    doneButton.backgroundColor=[UIColor clearColor];
+    [doneButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [doneButton setTitle:@"Save" forState:UIControlStateNormal];
+    [doneButton addTarget:self action:@selector(NameSaveClicked:) forControlEvents:UIControlEventTouchUpInside];
 
 
     nameInput = [[UITextField alloc] initWithFrame:CGRectMake(20, 40, 280, 40)];
@@ -266,19 +271,20 @@
 -(void) slidePhonePopup
 {
     
-    UIButton *doneButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
-    doneButton.frame=CGRectMake(20, 90, 40, 40);
-    doneButton.backgroundColor=[UIColor clearColor];
-    [doneButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [doneButton setTitle:@"Save" forState:UIControlStateNormal];
-    [doneButton addTarget:self action:@selector(NameDoneClicked:) forControlEvents:UIControlEventTouchUpInside];
-    
     UIButton *cancelButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
-    cancelButton.frame=CGRectMake(240, 90, 80, 40);
+    cancelButton.frame=CGRectMake(20, 90, 80, 40);
     cancelButton.backgroundColor=[UIColor clearColor];
     [cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
     [cancelButton addTarget:self action:@selector(CancelClicked:) forControlEvents:UIControlEventTouchUpInside];
+
+    UIButton *doneButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
+    doneButton.frame=CGRectMake(260, 90, 40, 40);
+    doneButton.backgroundColor=[UIColor clearColor];
+    [doneButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [doneButton setTitle:@"Save" forState:UIControlStateNormal];
+    [doneButton addTarget:self action:@selector(PhoneSaveClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
     
     
     phoneInput = [[UITextField alloc] initWithFrame:CGRectMake(20, 40, 280, 40)];
@@ -319,13 +325,13 @@
     [self removePopUp];
 }
 
--(IBAction) NameDoneClicked : (id) sender
+-(IBAction) NameSaveClicked : (id) sender
 {
     [self saveMyName: nameInput.text];
     [self removePopUp];
 }
 
--(IBAction) PhoneDoneClicked : (id) sender
+-(IBAction) PhoneSaveClicked : (id) sender
 {
     [self saveMyPhone: phoneInput.text];
     [self removePopUp];
