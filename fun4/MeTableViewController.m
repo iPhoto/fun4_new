@@ -93,9 +93,7 @@
 
 - (void)resizePictureFrame
 {
- 
-    //UIImage *myPicture = [UIImage imageNamed:@"boy.png"];
-    
+     
     UIImage *myPicture = me.picture;
     
     if (myPicture == nil)

@@ -943,8 +943,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "387"
             endingLineNumber = "387"
-            landmarkName = "@implementation MeTableViewController"
-            landmarkType = "3">
+            landmarkName = "-saveMyName:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1153,36 +1153,6 @@
             endingLineNumber = "484"
             landmarkName = "-saveMeToServer"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__39-[MeTableViewController saveMeToServer]_block_invoke_2"
-                  moduleName = "fun4"
-                  urlString = "file:///P/fun4_new/fun4/MeTableViewController.m"
-                  timestampString = "428463852.219672"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "484"
-                  endingLineNumber = "484"
-                  offsetFromSymbolStart = "948">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__39-[MeTableViewController saveMeToServer]_block_invoke_3"
-                  moduleName = "fun4"
-                  urlString = "file:///P/fun4_new/fun4/MeTableViewController.m"
-                  timestampString = "428463852.220053"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "484"
-                  endingLineNumber = "484"
-                  offsetFromSymbolStart = "36">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1498,22 +1468,6 @@
             startingLineNumber = "17"
             endingLineNumber = "17"
             landmarkName = "-scaleToSize:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "fun4/MeTableViewController.m"
-            timestampString = "428463795.649786"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "-resizePictureFrame"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
