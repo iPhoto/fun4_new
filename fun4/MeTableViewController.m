@@ -39,8 +39,8 @@
 {
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     managedContextObject = appDelegate.managedObjectContext;
-    [self loadMe];
-    [self displayMe];
+//    [self loadMe];
+//    [self displayMe];
     [super viewDidLoad];
 }
 
@@ -103,13 +103,13 @@
         {
             myPicture = [UIImage imageNamed:@"nogender.png"];
         }
-        else if ([me.gender intValue] == 0)
-        {
-            myPicture = [UIImage imageNamed:@"boy.png"];
-        }
         else if ([me.gender intValue] == 1)
         {
-            myPicture = [UIImage imageNamed:@"girl.png"];
+            myPicture = [UIImage imageNamed:@"boySelected.png"];
+        }
+        else if ([me.gender intValue] == 2)
+        {
+            myPicture = [UIImage imageNamed:@"girlSelected.png"];
         }
         
     }
@@ -162,10 +162,25 @@
     
     UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
     
-    if (indexPath.row == 0)
+    if (indexPath.row == 0) //profile picture
     {
         [cell addSubview:_profilePhoto];
     }
+    else if (indexPath.row == 3) //gender
+    {
+        UIImageView *selectedGender = [[UIImageView alloc] initWithFrame:CGRectMake(230, 2.5, 50, 50)];
+        if ([me.gender intValue] == 1) //boy
+        {
+            selectedGender.image = [UIImage imageNamed:@"boySelected.png"];
+        }
+        else if ([me.gender intValue] == 2) //girl
+        {
+            selectedGender.image = [UIImage imageNamed:@"girlSelected.png"];
+        }
+        [cell addSubview: selectedGender];
+
+    }
+    
     
     return cell;
 }
@@ -366,10 +381,7 @@
     _profilePhoto.image = initialImage;
     
     
-    [[Picker presentingViewController] dismissViewControllerAnimated:YES completion:nil];
-
-    [self loadMe];
-
+    
     //save image to core data
     if (me == nil)
     {
@@ -386,6 +398,8 @@
     }
     [self saveMeToCoreData];
     [self saveMyPictureToServer];
+    
+    [[Picker presentingViewController] dismissViewControllerAnimated:YES completion:nil];
 
 }
 

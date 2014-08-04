@@ -91,7 +91,7 @@
     
     UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
 
-    if (indexPath.row == genderSelection)
+    if (indexPath.row == genderSelection - 1)
     {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
@@ -101,7 +101,7 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    genderSelection = indexPath.row;
+    genderSelection = indexPath.row + 1;
     [tableView reloadData];
     [self saveMyGender:genderSelection];
     [self.navigationController popViewControllerAnimated:YES];
