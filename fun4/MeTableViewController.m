@@ -126,7 +126,7 @@
     // Scale the image
     //UIImage *scaledPicture = [myPicture scaleToSize:CGSizeMake(60.0f, 60.0f)];
     
-    _profilePhoto.contentMode = UIViewContentModeScaleAspectFit;
+    _profilePhoto.contentMode = UIViewContentModeScaleToFill;
     
 
 }
@@ -168,7 +168,7 @@
     }
     else if (indexPath.row == 3) //gender
     {
-        UIImageView *selectedGender = [[UIImageView alloc] initWithFrame:CGRectMake(230, 2.5, 50, 50)];
+        UIImageView *selectedGender = [[UIImageView alloc] initWithFrame:CGRectMake(230, 8, 52, 40)];
         if ([me.gender intValue] == 1) //boy
         {
             selectedGender.image = [UIImage imageNamed:@"boySelected.png"];
